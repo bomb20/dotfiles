@@ -1,0 +1,25 @@
+[global_config]
+  borderless = True
+  focus = mouse
+  inactive_color_offset = 0.606557377049
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    allow_bold = False
+    background_color = "#1c1c1c"
+    cursor_color = "#aaaaaa"
+    font = Inconsolata Medium 11
+    foreground_color = "#ffffff"
+    palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
