@@ -10,4 +10,4 @@ fi
 #fi
 #
 
-xmodmap ~/.Xmodmap
+#xmodmap ~/.Xmodmap

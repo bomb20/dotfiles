@@ -97,4 +97,4 @@ alias ll="ls -al"
 #echo "Today's tasks:"
 #today
 
-xmodmap ~/.Xmodmap
+#xmodmap ~/.Xmodmap
