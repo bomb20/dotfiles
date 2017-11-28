@@ -29,7 +29,7 @@ ZSH_THEME="gentoo"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -88,6 +88,7 @@ export PATH=$PATH:/home/vincent/.bin
 export EDITOR=vim
 
 alias ll="ls -al"
+alias gpg="gpg2"
 #alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
 #alias week="task next +WEEK or +next or +OVERDUE"
 #alias work="task +joni or +fritz"
@@ -97,4 +98,4 @@ alias ll="ls -al"
 #echo "Today's tasks:"
 #today
 
-#xmodmap ~/.Xmodmap
+xmodmap ~/.Xmodmap
