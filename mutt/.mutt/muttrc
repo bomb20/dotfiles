@@ -16,7 +16,7 @@ set pager_index_lines = 12
 set sort=reverse-threads
 set sort_aux=last-date-received
 
-send-hook "~f redtux@posteo.net" set pgp_sign_as = "1641320000B80C7F76D166D1521AB204B76D1565"
+#send-hook "~f redtux@posteo.net" set pgp_sign_as = "1641320000B80C7F76D166D1521AB204B76D1565"
 set postpone_encrypt=yes
 set postpone_encrypt_as="1641320000B80C7F76D166D1521AB204B76D1565"
 #set crypt_use_gpgme=yes
