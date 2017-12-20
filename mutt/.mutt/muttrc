@@ -50,13 +50,13 @@ source ~/.mutt/colors.ex
 source ~/.mutt/account
 #folder-hook .*redtux@posteo.net/ 'source ~/.mutt/posteo'
 
-#set query_command= "khard email --parsable %s"
-#bind editor <Tab> complete-query
-#bind editor ^T    complete
-#
-#macro index,pager A \
-#    "<pipe-message>khard add-email<return>" \
-#    "add the sender email address to khard"
+set query_command= "khard email --parsable %s"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+macro index,pager A \
+    "<pipe-message>khard add-email<return>" \
+    "add the sender email address to khard"
 
 bind pager j next-line
 bind pager k previous-line
