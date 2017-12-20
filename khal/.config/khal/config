@@ -1,0 +1,23 @@
+[calendars]
+
+[[personal_local]]
+path = ~/.calendars/personalics/
+type = discover
+color = light green
+
+[[uni_local]]
+path = ~/.calendars/uniics/
+type = discover
+color = light red
+
+[[alise_local]]
+path = ~/.calendars/personal_shared_by_alise/
+type = discover
+color = light blue
+
+[locale]
+timeformat = %H:%M
+dateformat = %d/%m/%Y
+longdateformat = %d/%m/%Y
+datetimeformat = %d/%m/%Y %H:%M
+longdatetimeformat = %d/%m/%Y %H:%M

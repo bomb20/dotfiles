@@ -1,0 +1,18 @@
+[calendars]
+
+[[personal_local]]
+path = ~/.calendars/personal/personal/
+type = discover
+color = green
+
+[[uni_local]]
+path = ~/.calendars/uni/08002400_einfhrung_in_die_diskrete_mathematikics/
+type = discover
+color = red
+
+[locale]
+timeformat = %H:%M
+dateformat = %d/%m/%Y
+longdateformat = %d/%m/%Y
+datetimeformat = %d/%m/%Y %H:%M
+longdatetimeformat = %d/%m/%Y %H:%M
