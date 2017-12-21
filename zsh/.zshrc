@@ -89,6 +89,8 @@ export EDITOR=vim
 
 alias ll="ls -al"
 alias gpg="gpg2"
+alias ww="w3m duckduckgo.com"
+alias ns="newsbeuter"
 #alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
 #alias week="task next +WEEK or +next or +OVERDUE"
 #alias work="task +joni or +fritz"
