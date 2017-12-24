@@ -118,10 +118,10 @@ let g:clang_complete_copen = 1
 
 set number
 
-set foldmethod=syntax
-
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
+"set foldmethod=syntax
+"
+"nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+"vnoremap <Space> zf
 
 execute pathogen#infect()
 
