@@ -33,5 +33,5 @@ report.schedule.description=Reporting scheduled tasks
 report.schedule.columns=id,scheduled,project,description.count
 report.schedule.labels=ID,Sched,Proj,Description
 report.schedule.sort=scheduled+
-report.schedule.filter=scheduled.before:2d
+report.schedule.filter=scheduled.before:7d and +PENDING
 dateformat.report=a H:N
