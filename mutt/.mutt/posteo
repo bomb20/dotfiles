@@ -1,0 +1,19 @@
+set imap_user="redtux@posteo.net"
+set imap_pass="`qubes-gpg-client-wrapper --quiet --decrypt ~/.mutt/posteo_pass.gpg`"
+set folder=imaps://posteo.de:993/
+set spoolfile=+INBOX
+set imap_check_subscribed
+set record = +Sent
+set realname = 'Vincent Truchseß'
+set from = redtux@posteo.net
+set use_from = yes
+set postponed=+Drafts
+
+#set smtp_url=smtps://posteo.de:465
+set smtp_url=smtp://$imap_user:"$imap_pass"@posteo.de:587
+#set ssl_force_tls = yes
+set ssl_starttls = yes
+
+account-hook $folder "set imap_user=$imap_user imap_pass=$imap_pass"
+
+send-hook "~f redtux@posteo.net" set pgp_sign_as = "1641320000B80C7F76D166D1521AB204B76D1565"

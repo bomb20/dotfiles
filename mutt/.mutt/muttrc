@@ -36,19 +36,19 @@ bind pager \CJ sidebar-next
 bind pager \CB sidebar-open
 
 ## Shortcuts
-#macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/posteo<enter><change-folder>!<enter>'
-#macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/studmail<enter><change-folder>!<enter>'
+macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/posteo<enter><change-folder>!<enter>'
+macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/studmail<enter><change-folder>!<enter>'
 
 #source ~/.mutt/gpg.rc
 source ~/.mutt/colors.ex
 
 ##Studmail
-#source ~/.mutt/studmail
-#folder-hook $folder 'source ~/.mutt/studmail'
+source ~/.mutt/studmail
+folder-hook $folder 'source ~/.mutt/studmail'
 
 ##Posteo 
-source ~/.mutt/account
-#folder-hook .*redtux@posteo.net/ 'source ~/.mutt/posteo'
+source ~/.mutt/posteo
+folder-hook .*redtux@posteo.net/ 'source ~/.mutt/posteo'
 
 set query_command= "khard email --parsable %s"
 bind editor <Tab> complete-query

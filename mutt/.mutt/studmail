@@ -1,0 +1,19 @@
+set imap_user="s345900"
+set imap_pass="`qubes-gpg-client-wrapper --quiet --decrypt ~/.mutt/studmail_pass.gpg`"
+set folder=imaps://imap.uni-wuerzburg.de:993/
+set spoolfile=+INBOX
+mailboxes =INBOX
+set imap_check_subscribed
+set record = +INBOX/Sent
+set postponed=+INBOX/Drafts
+set realname = 'Vincent Truchseß'
+set from = vincent.truchsess@stud-mail.uni-wuerzburg.de
+set use_from = yes
+
+#set smtp_url=smtps://posteo.de:465
+set smtp_url=smtps://$imap_user:$imap_pass@mailmaster.uni-wuerzburg.de:465
+#set ssl_force_tls = yes
+#set ssl_starttls = yes
+
+account-hook $folder "set imap_user=$imap_user imap_pass=$imap_pass"
+send-hook "~f vincent.truchsess@stud-mail.uni-wuerzburg.de" set pgp_sign_as = "1641320000B80C7F76D166D1521AB204B76D1565"
