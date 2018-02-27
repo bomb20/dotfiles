@@ -1,5 +1,5 @@
 set imap_user="s345900"
-set imap_pass="`qubes-gpg-client-wrapper --quiet --decrypt ~/.mutt/studmail_pass.gpg`"
+set imap_pass="`qubes-gpg-client-wrapper --quiet --decrypt ~/.mutt/studmail_pass.pgp`"
 set folder=imaps://imap.uni-wuerzburg.de:993/
 set spoolfile=+INBOX
 mailboxes =INBOX

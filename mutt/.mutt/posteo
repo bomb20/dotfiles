@@ -1,5 +1,5 @@
 set imap_user="redtux@posteo.net"
-set imap_pass="`qubes-gpg-client-wrapper --quiet --decrypt ~/.mutt/posteo_pass.gpg`"
+set imap_pass="`qubes-gpg-client-wrapper --quiet --decrypt ~/.mutt/posteo_pass.pgp`"
 set folder=imaps://posteo.de:993/
 set spoolfile=+INBOX
 set imap_check_subscribed
