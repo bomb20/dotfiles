@@ -106,4 +106,4 @@ alias poweroff="sudo poweroff"
 #echo "Today's tasks:"
 #today
 
-xmodmap ~/.Xmodmap
+#xmodmap ~/.Xmodmap
