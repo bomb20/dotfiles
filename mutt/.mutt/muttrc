@@ -45,6 +45,7 @@ folder-hook .*studmail/ 'source ~/.mutt/studmail'
 
 ##Posteo 
 source ~/.mutt/posteo
+source ~/.mutt/mailboxes
 folder-hook .*posteo/ 'source ~/.mutt/posteo'
 
 set query_command= "khard email --parsable %s"
