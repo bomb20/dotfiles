@@ -1,0 +1,45 @@
+[general]
+
+accounts = posteo, studmail
+pythonfile = ~/.offlineimap.py
+
+[Account posteo]
+
+localrepository = posteo-local
+remoterepository = posteo-remote
+
+[Repository posteo-local]
+type = Maildir
+localfolders = ~/mail/posteo
+
+[Repository posteo-remote]
+type = IMAP
+remotehost = posteo.de
+remoteuser = redtux@posteo.net
+remotepasseval = getPass("posteo")
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[Account studmail]
+
+localrepository = studmail-local
+remoterepository = studmail-remote
+
+[Repository studmail-local]
+type = Maildir
+localfolders = ~/mail/studmail
+
+[Repository studmail-remote]
+type = IMAP
+remotehost = imap.uni-wuerzburg.de
+remoteuser = s345900
+remotepasseval = getPass("studmail")
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[mbnames]
+
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep =  " "
+footer = "\n"

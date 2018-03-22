@@ -33,22 +33,19 @@ bind index \CJ sidebar-next
 bind index \CB sidebar-open
 bind pager \CK sidebar-prev
 bind pager \CJ sidebar-next
-bind pager \CB sidebar-open
+bind pager \C<enter> sidebar-open
 
-## Shortcuts
-macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/posteo<enter><change-folder>!<enter>'
-macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/studmail<enter><change-folder>!<enter>'
 
 #source ~/.mutt/gpg.rc
 source ~/.mutt/colors.ex
 
 ##Studmail
 #source ~/.mutt/studmail
-folder-hook .*vincent.truchsess@stud-mail.uni-wuerzburg.de 'source ~/.mutt/studmail'
+folder-hook .*studmail/ 'source ~/.mutt/studmail'
 
 ##Posteo 
 source ~/.mutt/posteo
-folder-hook .*redtux@posteo.net/ 'source ~/.mutt/posteo'
+folder-hook .*posteo/ 'source ~/.mutt/posteo'
 
 set query_command= "khard email --parsable %s"
 bind editor <Tab> complete-query
@@ -58,8 +55,16 @@ macro index,pager A \
     "<pipe-message>khard add-email<return>" \
     "add the sender email address to khard"
 
+macro index,pager <F2> "<change-folder> =posteo/INBOX<enter>"
+macro index,pager <F3> "<change-folder> =studmail/INBOX<enter>"
+
+macro index,pager \cN ':toggle sidebar_new_mail_only^M'
+set sidebar_new_mail_only
+
 bind pager j next-line
 bind pager k previous-line
+bind pager <down> next-line
+bind pager <up> previous-line
 bind attach,index,pager \CD next-page
 bind attach,index,pager \CU previous-page
 #bind pager g top

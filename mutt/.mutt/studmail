@@ -1,9 +1,6 @@
-set imap_user="s345900"
-set imap_pass="`qubes-gpg-client-wrapper --quiet --decrypt ~/.mutt/studmail_pass.pgp`"
-set folder=imaps://imap.uni-wuerzburg.de:993/
+set folder="~/mail"
 set spoolfile=+INBOX
 mailboxes =INBOX
-set imap_check_subscribed
 set record = +INBOX/Sent
 set postponed=+INBOX/Drafts
 set realname = 'Vincent Truchseß'
