@@ -98,7 +98,7 @@ alias alladd="git add ./"
 alias gtree="git log --graph --all --oneline"
 alias poweroff="sudo poweroff"
 
-alias mutt="offlineimap && /usr/bin/mutt"
+alias mail="mutt & offlineimap"
 
 #alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
 #alias week="task next +WEEK or +next or +OVERDUE"
