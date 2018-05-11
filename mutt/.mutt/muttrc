@@ -11,6 +11,8 @@ set crypt_autoencrypt=yes
 
 set crypt_use_gpgme=yes
 
+set crypt_use_gpgme=yes
+
 set header_cache = ~/.cache/mutt
 set message_cachedir = "~/.cache/mutt"
 

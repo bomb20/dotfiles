@@ -12,6 +12,4 @@ if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec startx
 fi
 
-rm ~/.gitit_pid > /dev/null
-
 #xmodmap ~/.Xmodmap
