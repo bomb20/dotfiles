@@ -9,6 +9,8 @@ set pgp_sign_as=1641320000B80C7F76D166D1521AB204B76D1565
 set crypt_autosign
 #set crypt_autoencrypt=yes
 
+set crypt_use_gpgme=yes
+
 set header_cache = ~/.cache/mutt
 set message_cachedir = "~/.cache/mutt"
 

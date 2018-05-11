@@ -1,6 +1,6 @@
 set imap_user="s345900"
-set folder=~/mail
 set imap_pass="`pass uni/s345900/rz`"
+set folder=~/mail
 set spoolfile=+INBOX
 mailboxes =INBOX
 set imap_check_subscribed
