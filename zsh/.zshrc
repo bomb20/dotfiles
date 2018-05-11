@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH=$PATH:/home/vincent/.bin
+export PATH=/home/vincent/.local/bin:$PATH
 export EDITOR=vim
 
 alias ll="ls -al"
@@ -97,9 +97,7 @@ alias allcommit="git add ./ && git commit -a"
 alias alladd="git add ./"
 alias gtree="git log --graph --all --oneline"
 alias poweroff="sudo poweroff"
-
-alias mail="mutt & offlineimap"
-
+alias netfoo="sudo systemctl restart NetworkManager"
 #alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
 #alias week="task next +WEEK or +next or +OVERDUE"
 #alias work="task +joni or +fritz"

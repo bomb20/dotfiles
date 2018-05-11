@@ -2,5 +2,5 @@
 
 from subprocess import check_output
 
-def getPass(account):
-    return check_output("qubes-gpg-client-wrapper --quiet --decrypt ~/.mutt/" + account + "_pass.pgp", shell=True).strip("\n")
+def getPass(passPath):
+    return check_output("pass " + passPath, shell=True).strip("\n")
