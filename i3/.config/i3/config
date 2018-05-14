@@ -179,7 +179,7 @@ bindsym XF86AudioMicMute exec pactl set-source-mute 1 toggle
 bindsym XF86Launch1 exec xdotool key "ctrl"+F1
 #bindsym ctrl+$mod+p exec i3-nagbar
 bindsym ctrl+$mod+p exec passmenu --type
-bindsym ctrl+$mod+f exec qutebrowser
+bindsym ctrl+$mod+f exec firefox
 bindsym XF86RotateWindows exec rotate
 
 exec --no-startup-id feh --bg-fill ~/.background.jpg
