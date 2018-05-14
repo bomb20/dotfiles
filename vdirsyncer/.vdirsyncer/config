@@ -6,6 +6,7 @@ status_path = "~/.vdirsyncer/status/"
 a = "nextcloud_local"
 b = "nextcloud_remote"
 collections = ["from a", "from b"]
+conflict_resolution = "b wins"
 
 [storage nextcloud_local]
 type = "filesystem"
@@ -35,3 +36,21 @@ type = "carddav"
 url = "https://redtux.dynv6.net/nextcloud/remote.php/dav"
 username = "vincent"
 password = "XXXXXXXXXXXXXXXX"
+
+[pair nextcloud_uni]
+
+a = "uni_local"
+b = "uni_remote"
+collections = ["from a", "from b"]
+conflict_resolution = "b wins"
+
+[storage uni_local]
+type = "filesystem"
+path = "~/.calendars_uni/"
+fileext = ".ics"
+
+[storage uni_remote]
+type = "caldav"
+url= "https://oc.informatik.uni-wuerzburg.de/remote.php/dav/"
+username = "s345900"
+password = "XXXXXXXXXXXXXXXXXX"

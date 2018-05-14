@@ -1,3 +1,6 @@
+
+export PATH=/home/vincent/.local/bin:$PATH
+
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing
 fi
@@ -9,5 +12,6 @@ if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec startx
 fi
 
+rm ~/.gitit_pid > /dev/null
 
 #xmodmap ~/.Xmodmap

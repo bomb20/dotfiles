@@ -125,4 +125,5 @@ set number
 
 execute pathogen#infect()
 
+
 map <C-n> :NERDTreeToggle<CR>

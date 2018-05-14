@@ -15,6 +15,11 @@ path = ~/.calendars/personal_shared_by_alise/
 type = discover
 color = light blue
 
+[[hwp_local]]
+path = ~/.calendars_uni/hwp/
+type = discover
+color = light cyan
+
 [locale]
 timeformat = %H:%M
 dateformat = %d/%m/%Y
