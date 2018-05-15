@@ -2,7 +2,7 @@ set imap_user="redtux@posteo.net"
 set imap_pass="`pass email/posteo_new`"
 set folder=~/mail
 set spoolfile=+INBOX
-#set imap_check_subscribed
+set imap_check_subscribed
 set record = +Sent
 set realname = 'Vincent Truchseß'
 set from = redtux@posteo.net
@@ -10,6 +10,8 @@ set use_from = yes
 set postponed=+Drafts
 
 #set smtp_url=smtps://posteo.de:465
+#set smtp_url=smtps://$imap_user@posteo.de:587
+
 set smtp_url=smtp://$imap_user:"$imap_pass"@posteo.de:587
 #set ssl_force_tls = yes
 set ssl_starttls = yes

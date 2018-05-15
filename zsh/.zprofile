@@ -1,5 +1,5 @@
 
-export PATH=/home/vincent/.local/bin:$$HOME/.cargo/bin:PATH
+export PATH=/home/vincent/.local/bin:$HOME/.cargo/bin:$PATH
 
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing

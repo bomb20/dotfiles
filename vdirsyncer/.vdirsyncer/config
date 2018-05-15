@@ -17,7 +17,7 @@ fileext = ".ics"
 type = "caldav"
 url = "https://redtux.dynv6.net/nextcloud/remote.php/dav"
 username = "vincent"
-password = "XXXXXXXXXXXXXXXX"
+password.fetch = ["command", "pass", "internet/nextcloud/vincent"]
 
 [pair nextcloud_contacts]
 
@@ -35,7 +35,7 @@ fileext = ".vcf"
 type = "carddav"
 url = "https://redtux.dynv6.net/nextcloud/remote.php/dav"
 username = "vincent"
-password = "XXXXXXXXXXXXXXXX"
+password.fetch = ["command", "pass", "internet/nextcloud/vincent"]
 
 [pair nextcloud_uni]
 
@@ -53,4 +53,4 @@ fileext = ".ics"
 type = "caldav"
 url= "https://oc.informatik.uni-wuerzburg.de/remote.php/dav/"
 username = "s345900"
-password = "XXXXXXXXXXXXXXXXXX"
+password.fetch = ["command", "pass", "uni/s345900/cs"]
