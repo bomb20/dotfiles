@@ -189,3 +189,5 @@ exec --no-startup-id setxkbmap -variant altgr-intl -option caps:swapescape
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 exec --no-startup-id tilda
+exec nextcloud
+exec gajim
