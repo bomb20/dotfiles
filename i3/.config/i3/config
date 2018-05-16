@@ -103,8 +103,8 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "mutt"
+set $ws10 "gajim"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -190,6 +190,13 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 exec --no-startup-id tilda
 exec nextcloud
-exec gajim
+
+exec i3-msg '\
+       workspace mutt; \
+       exec mate-terminal -e mutt; \
+       workspace gajim; \
+       exec gajim; \
+       workspace 2'
+
 exec offlineimap -a posteo
 exec offlineimap -a studmail
