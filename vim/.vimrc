@@ -18,6 +18,39 @@ endif
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'zyedidia/literate.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'rust-lang/rust.vim'
+
+Plugin 'jpalardy/vim-slime'
+Plugin 'scrooloose/nerdtree'
+Plugin 'wookiehangover/jshint.vim'
+Plugin 'tpope/vim-fugitive.git'
+
+Plugin 'vim-scripts/utl.vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-speeddating'
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'mattn/calendar-vim'
+Plugin 'inkarkat/vim-SyntaxRange'
+Plugin 'jceb/vim-orgmode'
+Plugin 'vim-scripts/desert256.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -126,6 +159,49 @@ set number
 execute pathogen#infect()
 
 
+
 map <C-n> :NERDTreeToggle<CR>
 
 set colorcolumn=81
+
+let g:syntastic_literate_checkers = ['lit']
+let g:syntastic_rust_checkers = ['rustc']
+
+autocmd FileType literate compiler literate
+autocmd FileType literate set textwidth=80
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+let g:slime_target = "tmux"
+
+nmap <F8> :TagbarToggle<CR>
+
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
+nnoremap ; :
+
+set scrolloff=5
+set autoread
+
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+"This fixes the cursor-printing-characters-in-insert-mode issue in limp
+if &term[:4] == "xterm" || &term[:5] == 'screen' || &term[:3] == 'rxvt'
+  inoremap <silent> <C-[>OC <RIGHT>
+endif

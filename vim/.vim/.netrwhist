@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/vincent/.config/fish'
 let g:netrw_dirhist_2='/home/vincent/.config/fish/functions'
 let g:netrw_dirhist_3='/home/vincent/.config/i3'
 let g:netrw_dirhist_4='/home/vincent/coding/webannotator/webAnnotator/webEditor'
+let g:netrw_dirhist_5='/home/vincent/dotfiles/vim/.vim/ftplugin'
+let g:netrw_dirhist_6='/home/vincent/dotfiles/vim/.vim/bundle/literate.vim/syntax_checkers/literate'
