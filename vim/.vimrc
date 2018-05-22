@@ -48,6 +48,7 @@ Plugin 'inkarkat/vim-SyntaxRange'
 Plugin 'jceb/vim-orgmode'
 Plugin 'vim-scripts/desert256.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -206,3 +207,6 @@ augroup END
 if &term[:4] == "xterm" || &term[:5] == 'screen' || &term[:3] == 'rxvt'
   inoremap <silent> <C-[>OC <RIGHT>
 endif
+
+colorscheme desert256
+set t_Co=256
