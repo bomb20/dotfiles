@@ -47,6 +47,7 @@ Plugin 'mattn/calendar-vim'
 Plugin 'inkarkat/vim-SyntaxRange'
 Plugin 'jceb/vim-orgmode'
 Plugin 'vim-scripts/desert256.vim'
+Plugin 'vim-airline/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

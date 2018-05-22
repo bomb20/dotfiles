@@ -108,3 +108,8 @@ alias netfoo="sudo systemctl restart NetworkManager"
 #today
 
 #xmodmap ~/.Xmodmap
+#
+
+powerline-daemon -q
+. /usr/lib/python3/dist-packages/powerline/bindings/zsh/
+
