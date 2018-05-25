@@ -50,6 +50,10 @@ Plugin 'vim-scripts/desert256.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+
+Plugin 'vimwiki/vimwiki'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -177,8 +181,8 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
 
 let g:slime_target = "tmux"
 
@@ -210,3 +214,11 @@ endif
 
 colorscheme desert256
 set t_Co=256
+
+" Vimwiki Section
+
+let g:vimwiki_list = [ 
+      \ {}
+      \ ]
+"      \ ,{'path': '~/tmp'} 
+"      \ ]
