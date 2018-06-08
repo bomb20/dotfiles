@@ -208,11 +208,11 @@ augroup numbertoggle
 augroup END
 
 "This fixes the cursor-printing-characters-in-insert-mode issue in limp
-if &term[:4] == "xterm" || &term[:5] == 'screen' || &term[:3] == 'rxvt'
-  inoremap <silent> <C-[>OC <RIGHT>
-endif
-
-colorscheme desert256
+"if &term[:4] == "xterm" || &term[:5] == 'screen' || &term[:3] == 'rxvt'
+"  inoremap <silent> <C-[>OC <RIGHT>
+"endif
+"
+colorscheme pablo
 set t_Co=256
 
 " Vimwiki Section
@@ -222,3 +222,5 @@ let g:vimwiki_list = [
       \ ]
 "      \ ,{'path': '~/tmp'} 
 "      \ ]
+
+let g:vimwiki_folding = 'list'

@@ -4,5 +4,6 @@
 [merge]
 	tool = vimdiff
 [alias]
-  co = commit
+  co = checkout
   br = branch
+  cm = commit
