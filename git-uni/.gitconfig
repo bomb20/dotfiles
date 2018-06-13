@@ -1,0 +1,9 @@
+[user]
+	email = vincent.truchsess@stud-mail.uni-wuerzburg.de
+	name = Vincent Truchseß
+[merge]
+	tool = vimdiff
+[alias]
+  co = checkout
+  br = branch
+  cm = commit
