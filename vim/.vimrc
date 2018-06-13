@@ -36,7 +36,7 @@ Plugin 'rust-lang/rust.vim'
 
 Plugin 'jpalardy/vim-slime'
 Plugin 'scrooloose/nerdtree'
-Plugin 'wookiehangover/jshint.vim'
+" Plugin 'wookiehangover/jshint.vim'
 Plugin 'tpope/vim-fugitive.git'
 
 Plugin 'vim-scripts/utl.vim'
@@ -221,6 +221,8 @@ let g:vimwiki_list = [
       \ {}
       \ ]
 "      \ ,{'path': '~/tmp'} 
-"      \ ]
+"      \  
+"
+let g:auto_type_info=0
 
-let g:vimwiki_folding = 'list'
+autocmd FileType markdown set textwidth=80
