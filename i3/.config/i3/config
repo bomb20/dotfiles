@@ -193,10 +193,10 @@ exec nextcloud
 
 exec i3-msg '\
        workspace mutt; \
-       exec mate-terminal -e mutt; \
+       exec terminator -x mutt; \
        workspace gajim; \
        exec gajim; \
-       workspace 2'
+       workspace 1'
 
 exec offlineimap -a posteo
 exec offlineimap -a studmail

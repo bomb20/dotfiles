@@ -52,7 +52,7 @@ Plugin 'vim-airline/vim-airline-themes'
 
 
 Plugin 'vimwiki/vimwiki'
-
+Plugin 'racer-rust/vim-racer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -171,7 +171,7 @@ map <C-n> :NERDTreeToggle<CR>
 set colorcolumn=81
 
 let g:syntastic_literate_checkers = ['lit']
-let g:syntastic_rust_checkers = ['rustc']
+let g:syntastic_rust_checkers = ['cargo']
 
 autocmd FileType literate compiler literate
 autocmd FileType literate set textwidth=80
