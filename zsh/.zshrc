@@ -85,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR=vim
+export RUST_SRC_PATH=~/.local/src/rustc-1.26.2-src/src
 
 alias ll="ls -al"
 alias gpg="gpg2"

@@ -14,3 +14,5 @@ fi
 
 #xmodmap ~/.Xmodmap
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
