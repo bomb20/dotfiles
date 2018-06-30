@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec mate-terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -103,8 +103,8 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "mutt"
-set $ws10 "gajim"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -137,6 +137,15 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+
+# class                 border  backgr. text    indicator child_border
+ client.focused          #000060 #202080 #ffffff #202080   #202080
+ client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+ client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+ client.urgent           #2f343a #900000 #ffffff #900000   #900000
+ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+ client.background       #ffffff
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -167,11 +176,23 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+  colors {
+        background #000000
+        statusline #ffffff
+        separator #666666
+
+        focused_workspace  #101040 #202080 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
+    }
         status_command i3status
 	position top
 }
 
-bindsym ctrl+$mod+l exec --no-startup-id i3lock
+bindsym ctrl+$mod+l exec --no-startup-id lock.sh
+
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
@@ -182,21 +203,21 @@ bindsym ctrl+$mod+p exec passmenu --type
 bindsym ctrl+$mod+f exec firefox
 bindsym XF86RotateWindows exec rotate
 
-exec --no-startup-id feh --bg-fill ~/.background.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/starfleet.png
 exec --no-startup-id redshift-gtk -l 49:9
 exec --no-startup-id caffeine-indicator
 exec --no-startup-id setxkbmap -variant altgr-intl -option caps:swapescape
 exec --no-startup-id nm-applet
-exec --no-startup-id pasystray
+exec --no-startup-id pa-applet
 exec --no-startup-id tilda
-exec nextcloud
+exec owncloud
 
-exec i3-msg '\
-       workspace mutt; \
-       exec terminator -x mutt; \
-       workspace gajim; \
-       exec gajim; \
-       workspace 1'
+#exec i3-msg '\
+#       workspace mutt; \
+#       exec terminator -x mutt; \
+#       workspace gajim; \
+#       exec gajim; \
+#       workspace 1'
 
 exec offlineimap -a posteo
 exec offlineimap -a studmail
