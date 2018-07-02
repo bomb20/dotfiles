@@ -137,11 +137,16 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+gaps inner 8
+gaps outer 0
+new_window pixel 2
+smart_gaps on
+smart_borders on
 
 # class                 border  backgr. text    indicator child_border
- client.focused          #000060 #202080 #ffffff #202080   #202080
- client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
- client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+ client.focused          #F88017 #F88017 #ffffff #F88017   #F88017
+ client.focused_inactive #222222 #5f676a #ffffff #484e50   #222222
+ client.unfocused        #222222 #222222 #888888 #292d2e   #222222
  client.urgent           #2f343a #900000 #ffffff #900000   #900000
  client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -211,6 +216,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pa-applet
 exec --no-startup-id tilda
 exec owncloud
+exec compton
 
 #exec i3-msg '\
 #       workspace mutt; \
