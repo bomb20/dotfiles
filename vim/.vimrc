@@ -212,7 +212,7 @@ augroup END
 "  inoremap <silent> <C-[>OC <RIGHT>
 "endif
 "
-colorscheme default
+colorscheme pablo
 set t_Co=256
 
 " Vimwiki Section
