@@ -182,8 +182,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   colors {
-        background #000000
-        statusline #ffffff
+        background #222222
+        statusline #efefef
         separator #666666
 
         focused_workspace  #101040 #202080 #ffffff
@@ -192,6 +192,8 @@ bar {
         urgent_workspace   #2f343a #900000 #ffffff
         binding_mode       #2f343a #900000 #ffffff
     }
+  tray_padding 3
+  font pango:Ubuntu regular 10
         status_command i3status
 	position top
 }
@@ -225,5 +227,7 @@ exec compton
 #       exec gajim; \
 #       workspace 1'
 
-exec offlineimap -a posteo
-exec offlineimap -a studmail
+exec xss-lock ~/.local/bin/lock.sh
+
+#exec offlineimap -a posteo
+#exec offlineimap -a studmail
