@@ -11,6 +11,7 @@ order += "wireless wlp3s0"
 order += "ethernet enp0s25"
 order += "battery 0"
 order += "tztime local"
+order += "ddate"
 
 wireless wlp3s0 {
         format_up = "W: (%quality at %essid, %bitrate) %ip"
@@ -43,6 +44,10 @@ run_watch VPNC {
         pidfile = "/var/run/vpnc/pid"
 }
 
+ddate {
+  format = "%{%a, %b %d%}, %Y%N - %H"
+}
+
 path_exists VPN {
         # path exists when a VPN tunnel launched by nmcli/nm-applet is active
         path = "/proc/sys/net/ipv4/conf/tun0"
@@ -50,7 +55,7 @@ path_exists VPN {
 
 tztime local {
 #        format = "%Y-%m-%d %H:%M:%S"
-        format = "%d.%m.%Y %H:%M:%S"
+        format = "%d.%m.%Y %H:%M:%S - %s"
 }
 
 tztime berlin {
