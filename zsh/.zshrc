@@ -56,7 +56,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 source ~/.prompt-color
-PS1="%(!.%{$fg_bold[red]%}.%{$fg_bold[$COLOR]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} "
+export PS1='%(!.%{$fg_bold[red]%}.%{$fg_bold[$COLOR]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
