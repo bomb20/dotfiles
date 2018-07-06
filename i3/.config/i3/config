@@ -211,7 +211,7 @@ bindsym ctrl+$mod+f exec firefox
 bindsym XF86RotateWindows exec rotate
 
 exec --no-startup-id feh --bg-fill ~/Pictures/starfleet.png
-exec --no-startup-id redshift-gtk -l 49:9
+exec --no-startup-id redshift-gtk
 exec --no-startup-id caffeine-indicator
 exec --no-startup-id setxkbmap -variant altgr-intl -option caps:swapescape
 exec --no-startup-id nm-applet
