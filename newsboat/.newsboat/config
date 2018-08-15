@@ -1,0 +1,6 @@
+use-proxy no
+proxy-type socks5
+proxy localhost:9050
+refresh-on-startup yes
+text-width 80
+browser qutebrowser

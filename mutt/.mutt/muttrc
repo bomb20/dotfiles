@@ -78,4 +78,4 @@ bind attach,index,pager \CU previous-page
 set mailcap_path 	= ~/.mutt/mailcap
 auto_view text/html
 
-set signature="~/.mutt/signature"
+#set signature="~/.mutt/signature"

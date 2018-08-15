@@ -10,8 +10,8 @@ order += "path_exists VPN"
 order += "wireless wlp3s0"
 order += "ethernet enp0s25"
 order += "battery 0"
-order += "tztime local"
 order += "ddate"
+order += "tztime local"
 
 wireless wlp3s0 {
         format_up = "W: (%quality at %essid, %bitrate) %ip"
@@ -54,8 +54,8 @@ path_exists VPN {
 }
 
 tztime local {
-#        format = "%Y-%m-%d %H:%M:%S"
-        format = "%d.%m.%Y %H:%M:%S - %s"
+        format = "%Y-%m-%d %H:%M"
+#        format = "%d.%m.%Y %H:%M:%S - %s"
 }
 
 tztime berlin {

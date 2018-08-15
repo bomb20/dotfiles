@@ -101,14 +101,14 @@ alias gtree="git log --graph --all --oneline"
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot" 
 alias netfoo="sudo systemctl restart NetworkManager"
-#alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
+alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
 #alias week="task next +WEEK or +next or +OVERDUE"
 #alias work="task +joni or +fritz"
 #alias uni="task +uni"
 #alias email="task +email or +call"
 #
 #echo "Today's tasks:"
-#today
+today
 
 #xmodmap ~/.Xmodmap
 #

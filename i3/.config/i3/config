@@ -137,11 +137,11 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-gaps inner 8
-gaps outer 0
+#gaps inner 8
+#gaps outer 0
 new_window pixel 2
-smart_gaps on
-smart_borders on
+#smart_gaps on
+#smart_borders on
 
 # class                 border  backgr. text    indicator child_border
  client.focused          #F88017 #F88017 #ffffff #F88017   #F88017
@@ -210,9 +210,9 @@ bindsym ctrl+$mod+p exec passmenu --type
 bindsym ctrl+$mod+f exec firefox
 bindsym XF86RotateWindows exec rotate
 
-exec --no-startup-id feh --bg-fill ~/Pictures/starfleet.png
-exec --no-startup-id redshift-gtk
+exec --no-startup-id feh --bg-fill ~/Pictures/starfleet_0.jpg
 exec --no-startup-id caffeine-indicator
+exec --no-startup-id redshift-gtk -l 49.8:9.9 -t 6600:2800
 exec --no-startup-id setxkbmap -variant altgr-intl -option caps:swapescape
 exec --no-startup-id nm-applet
 exec --no-startup-id pa-applet
