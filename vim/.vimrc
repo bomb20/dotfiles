@@ -53,6 +53,7 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'vimwiki/vimwiki'
 Plugin 'racer-rust/vim-racer'
+Plugin 'chrisbra/csv.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -180,8 +181,8 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 
 let g:slime_target = "tmux"
@@ -226,3 +227,5 @@ let g:vimwiki_list = [
 let g:auto_type_info=0
 
 autocmd FileType markdown set textwidth=80
+
+autocmd FileType javascript set shiftwidth=4

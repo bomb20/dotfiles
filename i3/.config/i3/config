@@ -230,5 +230,4 @@ exec blueman-applet
 
 exec xss-lock ~/.local/bin/lock.sh
 
-#exec offlineimap -a posteo
-#exec offlineimap -a studmail
+#exec ~/.local/bin/offlineimap.sh

@@ -108,7 +108,7 @@ alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
 #alias email="task +email or +call"
 #
 #echo "Today's tasks:"
-today
+#today
 
 #xmodmap ~/.Xmodmap
 #
