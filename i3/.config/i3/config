@@ -138,10 +138,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 #gaps inner 8
-#gaps outer 0
+gaps outer 0
 new_window pixel 2
 #smart_gaps on
-#smart_borders on
+smart_borders on
 
 # class                 border  backgr. text    indicator child_border
  client.focused          #F88017 #F88017 #ffffff #F88017   #F88017
@@ -205,6 +205,7 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
 bindsym XF86AudioMicMute exec pactl set-source-mute 1 toggle
 bindsym XF86Launch1 exec xdotool key "ctrl"+F1
+bindsym XF86TaskPane exec gnome-screenshot -ac
 #bindsym ctrl+$mod+p exec i3-nagbar
 bindsym ctrl+$mod+p exec passmenu --type
 bindsym ctrl+$mod+f exec firefox
@@ -218,7 +219,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pa-applet
 exec --no-startup-id tilda
 exec owncloud
-exec compton
+#exec compton
 exec blueman-applet
 
 #exec i3-msg '\

@@ -54,6 +54,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vimwiki/vimwiki'
 Plugin 'racer-rust/vim-racer'
 Plugin 'chrisbra/csv.vim'
+Plugin 'vim-scripts/Drawit'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -227,5 +228,5 @@ let g:vimwiki_list = [
 let g:auto_type_info=0
 
 autocmd FileType markdown set textwidth=80
-
+autocmd FileType asciidoc set textwidth=80
 autocmd FileType javascript set shiftwidth=4
