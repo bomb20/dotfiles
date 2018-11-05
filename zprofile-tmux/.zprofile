@@ -12,6 +12,7 @@
 
 #xmodmap ~/.Xmodmap
 
+export SHELL=/usr/bin/zsh
 
 if [ ! $TMUX ]
 then
@@ -21,4 +22,5 @@ then
 	else
 		tmux new-session -s default
 	fi
+  exit
 fi
