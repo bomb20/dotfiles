@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -137,11 +137,11 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-#gaps inner 8
+gaps inner 8
 gaps outer 0
 new_window pixel 2
-#smart_gaps on
-smart_borders on
+smart_gaps on
+#smart_borders on
 
 # class                 border  backgr. text    indicator child_border
  client.focused          #F88017 #F88017 #ffffff #F88017   #F88017
@@ -200,10 +200,14 @@ bar {
 
 bindsym ctrl+$mod+l exec --no-startup-id lock.sh
 
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
-bindsym XF86AudioMicMute exec pactl set-source-mute 1 toggle
+#bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+#bindsym XF86AudioMicMute exec pactl set-source-mute 1 toggle
+bindsym ctrl+F1 exec pactl set-sink-mute 0 toggle
+bindsym ctrl+F3 exec pactl set-sink-volume 0 +5%
+bindsym ctrl+F2 exec pactl set-sink-volume 0 -5%
+bindsym ctrl+F4 exec pactl set-source-mute 1 toggle
 bindsym XF86Launch1 exec xdotool key "ctrl"+F1
 bindsym XF86TaskPane exec gnome-screenshot -ac
 #bindsym ctrl+$mod+p exec i3-nagbar
@@ -211,15 +215,17 @@ bindsym ctrl+$mod+p exec passmenu --type
 bindsym ctrl+$mod+f exec firefox
 bindsym XF86RotateWindows exec rotate
 
-exec --no-startup-id feh --bg-fill ~/Pictures/starfleet_0.jpg
-exec --no-startup-id caffeine-indicator
-exec --no-startup-id redshift-gtk -l 49.8:9.9 -t 6600:2800
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+exec --no-startup-id feh --bg-fill ~/Pictures/crab-nebular.jpg
+#exec --no-startup-id feh --bg-fill ~/Pictures/starfleet_0.jpg
+exec --no-startup-id caffeine
+exec --no-startup-id redshift
 exec --no-startup-id setxkbmap -variant altgr-intl -option caps:swapescape
-exec --no-startup-id nm-applet
-exec --no-startup-id pa-applet
 exec --no-startup-id tilda
 exec owncloud
-#exec compton
+exec compton
 exec blueman-applet
 
 #exec i3-msg '\

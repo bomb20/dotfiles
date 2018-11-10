@@ -5,6 +5,8 @@
 	tool = vimdiff
 [alias]
   co = checkout
-  br = branch
   cm = commit
-  lg = log --graph --full-history --all --abbrev-commit --decorate --format='%C(bold blue)%h%C(reset) - %C(bold yellow)(%ar) %an %C(auto)%d %C(reset)%n            %s%C(reset)'
+  l = log --graph --full-history --all --abbrev-commit --decorate --format='%C(bold blue)%h%C(reset) - %C(bold yellow)(%ar) %an %C(auto)%d %C(reset)%n            %s%C(reset)'
+  s = status
+[icdiff]
+	options = --highlight --line-numbers
