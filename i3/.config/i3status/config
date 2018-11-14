@@ -1,7 +1,7 @@
 general {
         output_format = "i3bar"
         colors = true
-        color_good = "#6060ff"
+        color_good = "#8080ff"
         color_bad = "#ff6060"
         interval = 5
 }
@@ -63,7 +63,7 @@ ddate {
 
 path_exists VPN {
         # path exists when a VPN tunnel launched by nmcli/nm-applet is active
-        path = "/proc/sys/net/ipv4/conf/tun0"
+        path = "/proc/sys/net/ipv6/conf/wg0"
 }
 
 tztime local {

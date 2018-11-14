@@ -30,7 +30,7 @@ font pango:monospace 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec urxvt
 #bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -193,7 +193,7 @@ bar {
         binding_mode       #2f343a #900000 #ffffff
     }
   tray_padding 3
-  font pango:Ubuntu regular 10
+  font pango:Ubuntu regular 11
         status_command i3status
 	position top
 }
@@ -221,12 +221,12 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 exec --no-startup-id feh --bg-fill ~/Pictures/crab-nebular.jpg
 #exec --no-startup-id feh --bg-fill ~/Pictures/starfleet_0.jpg
 exec --no-startup-id caffeine
-exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk
 exec --no-startup-id setxkbmap -variant altgr-intl -option caps:swapescape
 exec --no-startup-id tilda
-exec owncloud
+exec nextcloud
 exec compton
-exec blueman-applet
+#exec blueman-applet
 
 #exec i3-msg '\
 #       workspace mutt; \
