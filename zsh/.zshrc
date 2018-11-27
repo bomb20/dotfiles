@@ -105,12 +105,13 @@ alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot" 
 alias netfoo="sudo systemctl restart NetworkManager"
 alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
-alias ss="sudo"
 alias tt="exa -lT --git"
 alias ta="exa -laT --git"
 alias g="git"
 alias wgup="sudo wg_init.sh wg0 fe80::ff01"
 alias wgdown="sudo wg_down.sh wg0"
+alias rfc="grep -P '^\d+\s' ~/.ietf/rfc-index.txt | fzf --preview='cat ~/.ietf/rfc{+1}.txt'"
+#alias rfc="less ~/.ietf/\$(echo $(grep -P '^\d+\s' ~/.ietf/rfc-index.txt | fzf --preview='cat ~/.ietf/rfc{+1}.txt') | cut -d ' ' -f 1 | sed -e 's/$/.txt/' | sed -e 's/^/rfc/')"
 #alias week="task next +WEEK or +next or +OVERDUE"
 #alias work="task +joni or +fritz"
 #alias uni="task +uni"
@@ -118,6 +119,5 @@ alias wgdown="sudo wg_down.sh wg0"
 #
 #echo "Today's tasks:"
 #today
-
 #xmodmap ~/.Xmodmap
 #

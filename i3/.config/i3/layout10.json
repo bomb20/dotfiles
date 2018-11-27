@@ -1,0 +1,107 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.7,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1306,
+               "width": 1741,
+               "x": 0,
+               "y": 0
+            },
+            "name": "mutt",
+            "percent": 0.6,
+            "swallows": [
+               {
+               // "class": "^Alacritty$",
+               // "instance": "^Alacritty$",
+                "title": "^mutt$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "none",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 517,
+               "width": 1332,
+               "x": 581,
+               "y": 556
+            },
+            "name": "Dino",
+            "percent": 0.4,
+            "swallows": [
+               {
+               // "class": "^Dino$",
+               // "instance": "^dino$",
+                "title": "^Dino$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.3,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1306,
+               "width": 1741,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Alacritty",
+            "percent": 0.3,
+            "swallows": [
+               {
+               // "class": "^Alacritty$",
+               // "instance": "^Alacritty$",
+               "title": "^ikhal$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1037,
+               "width": 560,
+               "x": 1350,
+               "y": 33
+            },
+            "name": "Telegram (180)",
+            "percent": 0.7,
+            "swallows": [
+               {
+               // "class": "^TelegramDesktop$",
+               "instance": "^telegram\\-desktop$"
+               //"title": "^Telegram\\ \\(180\\)$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

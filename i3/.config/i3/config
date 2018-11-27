@@ -30,7 +30,7 @@ font pango:monospace 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 #bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -135,7 +135,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -b 'Yes, exit sway' 'swaymsg exit'"
 
 gaps inner 8
 gaps outer 0
@@ -192,7 +192,7 @@ bar {
         urgent_workspace   #2f343a #900000 #ffffff
         binding_mode       #2f343a #900000 #ffffff
     }
-  tray_padding 3
+#tray_padding 3
   font pango:Ubuntu regular 11
         status_command i3status
 	position top
@@ -213,19 +213,21 @@ bindsym XF86TaskPane exec gnome-screenshot -ac
 #bindsym ctrl+$mod+p exec i3-nagbar
 bindsym ctrl+$mod+p exec passmenu --type
 bindsym ctrl+$mod+f exec firefox
-bindsym XF86RotateWindows exec rotate
+#bindsym XF86RotateWindows exec rotate
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym ctrl+F6 exec brightnessctl set 100+
+bindsym ctrl+F5 exec brightnessctl set 100-
 
-exec --no-startup-id feh --bg-fill ~/Pictures/crab-nebular.jpg
+#exec xrdb ~/.Xresources
+output "*" background ~/Pictures/crab-nebular.jpg fill
+#exec --no-startup-id feh --bg-fill ~/Pictures/crab-nebular.jpg
 #exec --no-startup-id feh --bg-fill ~/Pictures/starfleet_0.jpg
-exec --no-startup-id caffeine
-exec --no-startup-id redshift-gtk
-exec --no-startup-id setxkbmap -variant altgr-intl -option caps:swapescape
-exec --no-startup-id tilda
-exec nextcloud
-exec compton
+#exec --no-startup-id caffeine
+#exec --no-startup-id redshift-gtk
+#exec --no-startup-id setxkbmap -variant altgr-intl -option caps:swapescape
+#exec --no-startup-id tilda
+#exec nextcloud
+#exec compton
 #exec blueman-applet
 
 #exec i3-msg '\
@@ -235,6 +237,8 @@ exec compton
 #       exec gajim; \
 #       workspace 1'
 
-exec xss-lock ~/.local/bin/lock.sh
+#exec xss-lock ~/.local/bin/lock.sh
 
 #exec ~/.local/bin/offlineimap.sh
+
+#exec --no-startup-id i3-msg "workspace 10; append_layout ~/.config/i3/layout10.json" && alacritty -t mutt -e mutt & alacritty -t ikhal -e ikhal & telegram-desktop & dino & i3-msg "workspace 1"

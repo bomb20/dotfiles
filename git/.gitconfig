@@ -9,4 +9,4 @@
   l = log --graph --full-history --all --abbrev-commit --decorate --format='%C(bold blue)%h%C(reset) - %C(bold yellow)(%ar) %an %C(auto)%d %C(reset)%n            %s%C(reset)'
   s = status
 [icdiff]
-	options = --highlight --line-numbers
+  options = --highlight --tabsize=1 --line-numbers

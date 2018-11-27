@@ -2,8 +2,9 @@ URxvt.depth: 32
 URxvt.background: [83]#000000
 URxvt.foreground: rgb:ff/ff/ff
 
-URxvt.font: xft:UbuntuMono:size=12.5
-URxvt.letterSpace: 0
+!URxvt.font: xft:Monospace:size=12
+URxvt.font: xft:UbuntuMono:size=14
+URxvt.letterSpace: 0.5
 
 URxvt.secondaryScreen: true
 URxvt.secondaryScroll: false
@@ -11,7 +12,6 @@ URxvt.secondaryWheel: true
 
 URxvt.scrollBar: false
 
-! Colors
 
 ! dark
 ! black

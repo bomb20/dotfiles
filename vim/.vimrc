@@ -230,3 +230,6 @@ let g:auto_type_info=0
 autocmd FileType markdown set textwidth=80
 autocmd FileType asciidoc set textwidth=80
 autocmd FileType javascript set shiftwidth=4
+
+nmap <Esc>[a <s-up>
+nmap <Esc>[b <s-down>
