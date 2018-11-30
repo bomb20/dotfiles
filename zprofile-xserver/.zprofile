@@ -15,6 +15,7 @@ if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   export XKB_DEFAULT_MODEL=pc105
   export XKB_DEFAULT_VARIANT=altgr-intl
   export XKB_DEFAULT_OPTIONS=caps:swapescape
+  export _JAVA_AWT_WM_NONREPARENTING=1
   exec sway
 
 fi

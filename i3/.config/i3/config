@@ -199,6 +199,7 @@ bar {
 }
 
 bindsym ctrl+$mod+l exec --no-startup-id lock.sh
+bindsym ctrl+$mod+shift+l exec lock.sh & systemctl suspend
 
 #bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
@@ -217,6 +218,7 @@ bindsym ctrl+$mod+f exec firefox
 
 bindsym ctrl+F6 exec brightnessctl set 100+
 bindsym ctrl+F5 exec brightnessctl set 100-
+
 
 #exec xrdb ~/.Xresources
 output "*" background ~/Pictures/crab-nebular.jpg fill

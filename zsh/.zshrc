@@ -121,3 +121,5 @@ alias rfc="grep -P '^\d+\s' ~/.ietf/rfc-index.txt | fzf --preview='cat ~/.ietf/r
 #today
 #xmodmap ~/.Xmodmap
 #
+
+fortune -s /usr/share/fortune/firefly | head -n -2 | cowsay -f /usr/share/cows/small.cow && echo ""
