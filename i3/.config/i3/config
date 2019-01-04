@@ -225,8 +225,8 @@ bindsym ctrl+$mod+p exec passmenu --type
 bindsym ctrl+$mod+f exec firefox
 #bindsym XF86RotateWindows exec rotate
 
-bindsym ctrl+F6 exec brightnessctl set 100+
-bindsym ctrl+F5 exec brightnessctl set 100-
+bindsym ctrl+F6 exec brightnessctl set 20+
+bindsym ctrl+F5 exec brightnessctl set 20-
 
 
 #exec xrdb ~/.Xresources

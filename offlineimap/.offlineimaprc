@@ -8,7 +8,7 @@ pythonfile = ~/.offlineimap.py
 [Account posteo]
 
 autorefresh = 0.5
-quick = 10
+quick = 5
 
 localrepository = posteo-local
 remoterepository = posteo-remote
@@ -30,7 +30,7 @@ holdconnectionopen = yes
 [Account studmail]
 
 autorefresh = 0.5
-quick = 10
+quick = 5
 
 localrepository = studmail-local
 remoterepository = studmail-remote
