@@ -9,7 +9,15 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
 fi
 
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec startx
+#  exec startx
+
+  export XKB_DEFAULT_LAYOUT=us
+  export XKB_DEFAULT_MODEL=pc105
+  export XKB_DEFAULT_VARIANT=altgr-intl
+  export XKB_DEFAULT_OPTIONS=caps:swapescape
+  export _JAVA_AWT_WM_NONREPARENTING=1
+  exec sway
+
 fi
 
 #xmodmap ~/.Xmodmap
