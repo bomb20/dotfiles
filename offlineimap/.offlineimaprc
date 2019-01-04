@@ -21,7 +21,7 @@ localfolders = ~/mail/posteo
 type = IMAP
 remotehost = posteo.de
 remoteuser = redtux@posteo.net
-remotepasseval = getPass("email/posteo_new")
+remotepasseval = getPass("posteo")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 keepalive = 60
@@ -43,7 +43,7 @@ localfolders = ~/mail/studmail
 type = IMAP
 remotehost = imap.uni-wuerzburg.de
 remoteuser = s345900
-remotepasseval = getPass("uni/s345900/rz")
+remotepasseval = getPass("studmail")
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 keepalive = 60

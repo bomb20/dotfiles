@@ -3,4 +3,4 @@
 from subprocess import check_output
 
 def getPass(passPath):
-    return check_output("pass " + passPath, shell=True).strip("\n")
+    return check_output("/home/vincent/.local/bin/getPass.sh " + passPath, shell=True).strip("\n")
