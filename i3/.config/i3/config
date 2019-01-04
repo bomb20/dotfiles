@@ -130,21 +130,12 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-
-# move focussed workspace to output
-bindsym $mod+Ctrl+Right move workspace to output right
-bindsym $mod+Ctrl+Left move workspace to output left
-
-# move containers to workspaces
-bindsym $mod+Alt+Right move window to output right
-bindsym $mod+Alt+Left move window to output left
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Waylans session.' -b 'Yes, exit sway' 'swaymsg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 gaps inner 8
 gaps outer 0
@@ -201,14 +192,13 @@ bar {
         urgent_workspace   #2f343a #900000 #ffffff
         binding_mode       #2f343a #900000 #ffffff
     }
-#tray_padding 3
+  tray_padding 3
   font pango:Ubuntu regular 11
         status_command i3status
 	position top
 }
 
 bindsym ctrl+$mod+l exec --no-startup-id lock.sh
-bindsym ctrl+$mod+shift+l exec lock.sh & systemctl suspend
 
 #bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
@@ -223,22 +213,19 @@ bindsym XF86TaskPane exec gnome-screenshot -ac
 #bindsym ctrl+$mod+p exec i3-nagbar
 bindsym ctrl+$mod+p exec passmenu --type
 bindsym ctrl+$mod+f exec firefox
-#bindsym XF86RotateWindows exec rotate
+bindsym XF86RotateWindows exec rotate
 
 bindsym ctrl+F6 exec backlight.sh inc
 bindsym ctrl+F5 exec backlight.sh dec
 
-
-#exec xrdb ~/.Xresources
-output "*" background ~/Pictures/crab-nebular.jpg fill
-#exec --no-startup-id feh --bg-fill ~/Pictures/crab-nebular.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/crab-nebular.jpg
 #exec --no-startup-id feh --bg-fill ~/Pictures/starfleet_0.jpg
-#exec --no-startup-id caffeine
-#exec --no-startup-id redshift-gtk
-#exec --no-startup-id setxkbmap -variant altgr-intl -option caps:swapescape
-#exec --no-startup-id tilda
-#exec nextcloud
-#exec compton
+exec --no-startup-id caffeine
+exec --no-startup-id redshift-gtk
+exec --no-startup-id setxkbmap -variant altgr-intl -option caps:swapescape
+exec --no-startup-id tilda
+exec nextcloud
+exec compton
 #exec blueman-applet
 
 #exec i3-msg '\
@@ -248,8 +235,6 @@ output "*" background ~/Pictures/crab-nebular.jpg fill
 #       exec gajim; \
 #       workspace 1'
 
-#exec xss-lock ~/.local/bin/lock.sh
+exec xss-lock ~/.local/bin/lock.sh
 
 #exec ~/.local/bin/offlineimap.sh
-
-#exec --no-startup-id i3-msg "workspace 10; append_layout ~/.config/i3/layout10.json" && alacritty -t mutt -e mutt & alacritty -t ikhal -e ikhal & telegram-desktop & dino & i3-msg "workspace 1"
