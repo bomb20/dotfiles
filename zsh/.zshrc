@@ -114,6 +114,7 @@ alias rfc="grep -P '^\d+\s' ~/.ietf/rfc-index.txt | fzf --preview='cat ~/.ietf/r
 alias brclassic="nvlc http://streams.br.de/br-klassik_2.m3u"
 alias tpm_reseal="udo luks-tpm -p 0 -p 1 -p 2 -p 3 -p 5 -p 7 /dev/sda2 reset"
 alias posteo_otp="pass email/posteo_otp | head -1 | xargs oathtool -b --totp="sha1" | wl-copy"
+alias mutt="mutt.sh"
 #alias rfc="less ~/.ietf/\$(echo $(grep -P '^\d+\s' ~/.ietf/rfc-index.txt | fzf --preview='cat ~/.ietf/rfc{+1}.txt') | cut -d ' ' -f 1 | sed -e 's/$/.txt/' | sed -e 's/^/rfc/')"
 #alias week="task next +WEEK or +next or +OVERDUE"
 #alias work="task +joni or +fritz"

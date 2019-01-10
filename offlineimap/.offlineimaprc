@@ -1,6 +1,6 @@
 [general]
 
-maxsyncaccounts = 1
+maxsyncaccounts = 2
 
 accounts = posteo, studmail
 pythonfile = ~/.offlineimap.py
