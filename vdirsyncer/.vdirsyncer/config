@@ -37,20 +37,20 @@ url = "https://redtux.dynv6.net/nextcloud/remote.php/dav"
 username = "vincent"
 password.fetch = ["command", "/home/vincent/.local/bin/getPass.sh", "nextcloud"]
 
-[pair nextcloud_uni]
-
-a = "uni_local"
-b = "uni_remote"
-collections = ["from a", "from b"]
-conflict_resolution = "b wins"
-
-[storage uni_local]
-type = "filesystem"
-path = "~/.calendars_uni/"
-fileext = ".ics"
-
-[storage uni_remote]
-type = "caldav"
-url= "https://oc.informatik.uni-wuerzburg.de/remote.php/dav/"
-username = "s345900"
-password.fetch = ["command", "/home/vincent/.local/bin/getPass.sh", "info"]
+#[pair nextcloud_uni]
+#
+#a = "uni_local"
+#b = "uni_remote"
+#collections = ["from a", "from b"]
+#conflict_resolution = "b wins"
+#
+#[storage uni_local]
+#type = "filesystem"
+#path = "~/.calendars_uni/"
+#fileext = ".ics"
+#
+#[storage uni_remote]
+#type = "caldav"
+#url= "https://oc.informatik.uni-wuerzburg.de/remote.php/dav/"
+#username = "s345900"
+#password.fetch = ["command", "/home/vincent/.local/bin/getPass.sh", "info"]
