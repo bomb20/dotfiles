@@ -130,6 +130,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+bindsym ctrl+$mod+Right move workspace to output right
+bindsym ctrl+$mod+Left move workspace to output left
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -235,6 +238,6 @@ exec compton
 #       exec gajim; \
 #       workspace 1'
 
-exec xss-lock ~/.local/bin/lock.sh
+#exec xss-lock ~/.local/bin/lock.sh
 
 #exec ~/.local/bin/offlineimap.sh
