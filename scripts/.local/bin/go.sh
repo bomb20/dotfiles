@@ -2,13 +2,17 @@
 
 BKFILE="$HOME/.bookmarks"
 
+DIR=""
 if [ "$1" == "" ]
 then
-  echo "$(cat "$BKFILE" | cut -d ' ' -f 2 | fzf --preview='ls {1}')"
+  DIR=$(cat "$BKFILE"| fzf --preview='ls {2}' | awk '{print $2}')
 else
   DIR=$(grep -P "^$1\s" "$BKFILE" | cut -d ' ' -f 2)
-  if ! [ "$DIR" == "" ]
-  then
-    echo "$DIR"
-  fi
+fi
+
+if [ "$DIR" == "" ]
+then
+  echo "./"
+else
+  echo "$DIR"
 fi
