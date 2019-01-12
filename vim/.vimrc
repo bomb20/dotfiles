@@ -55,6 +55,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'racer-rust/vim-racer'
 Plugin 'chrisbra/csv.vim'
 Plugin 'vim-scripts/Drawit'
+"Plugin 'tbabej/taskwiki'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -229,7 +230,7 @@ let g:auto_type_info=0
 
 autocmd FileType markdown set textwidth=80
 autocmd FileType asciidoc set textwidth=80
-autocmd FileType javascript set shiftwidth=4
+autocmd FileType javascript set shiftwidth=2
 
 nmap <Esc>[a <s-up>
 nmap <Esc>[b <s-down>
