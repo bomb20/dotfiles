@@ -142,12 +142,12 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 gaps inner 16
 gaps outer 1
-new_window pixel 2
+new_window pixel 1
 smart_gaps 1
 #smart_borders on
 
 # class                 border  backgr. text    indicator child_border
- client.focused          #F88017 #F88017 #ffffff #F88017   #F88017
+ client.focused          #23ef6e #23ef6e #ffffff #23ef6e   #23ef6e
  client.focused_inactive #222222 #5f676a #ffffff #484e50   #222222
  client.unfocused        #222222 #222222 #888888 #292d2e   #222222
  client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -185,23 +185,23 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   colors {
-        background #222222
-        statusline #efefef
-        separator #666666
+    background #222222
+      statusline #efefef
+      separator #666666
 
-        focused_workspace  #101040 #202080 #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-        binding_mode       #2f343a #900000 #ffffff
-    }
+      focused_workspace  #101040 #23ef6e #222222
+      active_workspace   #333333 #5f676a #ffffff
+      inactive_workspace #333333 #222222 #888888
+      urgent_workspace   #2f343a #900000 #ffffff
+      binding_mode       #2f343a #900000 #ffffff
+  }
   tray_padding 3
-  font pango:Ubuntu regular 11
-        status_command i3status
-	position bottom
+    font pango:Ubuntu regular 11
+    status_command i3status
+    position top
 }
 
-bindsym ctrl+$mod+l exec --no-startup-id lock.sh
+bindsym ctrl+$mod+l exec --no-startup-id i3lock -fo
 
 #bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%

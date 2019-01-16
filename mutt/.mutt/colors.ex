@@ -1,8 +1,8 @@
 # Colours for items in the index
-color index brightcyan black ~N
+color index brightgreen black ~N
 # Hmm, don't like this.
 #color index brightgreen black "~N (~x byers.world)|(~x byers.x)|(~x langly.levallois123.axialys.net)|(~x the.earth.li)"
-color index brightyellow black ~F
+color index black black ~F
 color index black green ~T
 color index brightred black ~D
 mono index bold ~N
@@ -13,8 +13,8 @@ mono index bold ~D
 # Highlights inside the body of a message.
 
 # URLs
-color body brightgreen black "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
-color body brightgreen black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body brightgreen default "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
+color body brightgreen default "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
 mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 
@@ -29,7 +29,7 @@ color header green black "^cc:"
 color header green black "^date:"
 color header yellow black "^newsgroups:"
 color header yellow black "^reply-to:"
-color header brightcyan black "^subject:"
+color header black black "^subject:"
 color header red black "^x-spam-rule:"
 color header green black "^x-mailer:"
 color header yellow black "^message-id:"
@@ -59,18 +59,18 @@ color quoted7 green black
 # Default color definitions
 #color hdrdefault white green
 color signature brightmagenta black
-color indicator black cyan
+color indicator black green
 color attachment black green
 color error red black
 color message white black
 color search brightwhite magenta
-color status brightyellow blue
+color status black blue
 color tree brightblue black
-color normal white black
+color normal white default
 color tilde green black
-color bold brightyellow black
+color bold black black
 #color underline magenta black
-color markers brightcyan black
+color markers brightgreen black
 # Colour definitions when on a mono screen
 mono bold bold
 mono underline underline

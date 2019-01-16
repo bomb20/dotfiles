@@ -234,3 +234,4 @@ autocmd FileType javascript set shiftwidth=2
 
 nmap <Esc>[a <s-up>
 nmap <Esc>[b <s-down>
+hi Normal guibg=NONE ctermbg=NONE
