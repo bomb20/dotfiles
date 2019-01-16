@@ -13,7 +13,7 @@ case "$CMD" in
       echo "$SK $(pwd)" >> "$BKFILE"
     fi
     ;;
-  "del")
+  "rm")
     sed -i "/^$SK\s/ d" "$BKFILE"
     ;;
 esac

@@ -94,16 +94,9 @@ export RUST_SRC_PATH=~/.local/src/rustc-1.26.2-src/src
 alias ll="exa -l --git"
 alias la="exa -la --git"
 alias gpg="gpg2"
-alias ww="w3m duckduckgo.com"
-alias ns="newsbeuter"
-alias wk="w3m ~/vimwiki_html/index.html"
 alias td="task schedule"
-alias allcommit="git add ./ && git commit -a"
-alias alladd="git add ./"
-alias gtree="git log --graph --all --oneline"
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot" 
-alias netfoo="sudo systemctl restart NetworkManager"
 alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
 alias tt="exa -lT --git"
 alias ta="exa -laT --git"
@@ -126,8 +119,26 @@ function cc(){
 #alias email="task +email or +call"
 #
 #echo "Today's tasks:"
-today 2>/dev/null
+task +WEEK 2>/dev/null
 #xmodmap ~/.Xmodmap
 #
 
 #
+eval 
+            fuck () {
+                TF_PYTHONIOENCODING=$PYTHONIOENCODING;
+                export TF_SHELL=zsh;
+                export TF_ALIAS=fuck;
+                TF_SHELL_ALIASES=$(alias);
+                export TF_SHELL_ALIASES;
+                TF_HISTORY="$(fc -ln -10)";
+                export TF_HISTORY;
+                export PYTHONIOENCODING=utf-8;
+                TF_CMD=$(
+                    thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
+                ) && eval $TF_CMD;
+                unset TF_HISTORY;
+                export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
+                test -n "$TF_CMD" && print -s $TF_CMD
+            }
+        
