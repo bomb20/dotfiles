@@ -215,7 +215,7 @@ augroup END
 "  inoremap <silent> <C-[>OC <RIGHT>
 "endif
 "
-colorscheme pablo
+colorscheme darkblue
 set t_Co=256
 
 " Vimwiki Section
