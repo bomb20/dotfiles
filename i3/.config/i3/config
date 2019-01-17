@@ -37,7 +37,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run
+bindsym $mod+space exec dmenu_run -sb lightgreen -sf black
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -214,7 +214,7 @@ bindsym ctrl+F4 exec pactl set-source-mute 1 toggle
 bindsym XF86Launch1 exec xdotool key "ctrl"+F1
 bindsym XF86TaskPane exec gnome-screenshot -ac
 #bindsym ctrl+$mod+p exec i3-nagbar
-bindsym ctrl+$mod+p exec passmenu --type
+bindsym ctrl+$mod+p exec passmenu --type -sb lightgreen -sf black
 bindsym ctrl+$mod+f exec firefox
 bindsym XF86RotateWindows exec rotate
 
