@@ -201,7 +201,7 @@ bar {
     position top
 }
 
-bindsym ctrl+$mod+l exec --no-startup-id i3lock -fo
+bindsym ctrl+$mod+l exec --no-startup-id i3lock -c 3ea577
 
 #bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
