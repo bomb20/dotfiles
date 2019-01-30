@@ -6,4 +6,6 @@ exec pasystray &
 exec cbatticon -n 1 &
 exec cbatticon 0 &
 exec nextcloud &
+exec blueman-applet &
+exec caffeine &
 exec awesome
