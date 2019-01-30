@@ -2,7 +2,7 @@
 # File              : .zshrc
 # Author            : Vincent Truchseß <redtux@posteo.net>
 # Date              : 25.01.2019
-# Last Modified Date: 25.01.2019
+# Last Modified Date: 30.01.2019
 # Last Modified By  : Vincent Truchseß <redtux@posteo.net>
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH:~/.cabal/bin
@@ -66,6 +66,9 @@ $HOME/.gencolor.sh
 COLOR=$(cat $HOME/.prompt-color)
 export PS1='%(!.%{$fg_bold[red]%}.%{$fg_bold[$COLOR]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
 # User configuration
+
+# Vin keybindings
+bindkey -v
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
