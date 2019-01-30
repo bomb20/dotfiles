@@ -1,3 +1,9 @@
+#!/bin/zsh
+# File              : .zshrc
+# Author            : Vincent Truchseß <redtux@posteo.net>
+# Date              : 25.01.2019
+# Last Modified Date: 25.01.2019
+# Last Modified By  : Vincent Truchseß <redtux@posteo.net>
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH:~/.cabal/bin
 
@@ -119,7 +125,7 @@ function cc(){
 #alias email="task +email or +call"
 #
 #echo "Today's tasks:"
-task +WEEK 2>/dev/null
+#task +WEEK 2>/dev/null
 #xmodmap ~/.Xmodmap
 #
 
