@@ -1,3 +1,11 @@
+" File              : .vimrc
+" Author            : Vincent Truchseß <redtux@posteo.net>
+" Date              : 27.01.2019
+" Last Modified Date: 28.01.2019
+" Last Modified By  : Vincent Truchseß <redtux@posteo.net>
+" File              : .vimrc
+" Date              : 25.01.2019
+" Last Modified Date: 25.01.2019
 
 " An example for a vimrc file.
 "
@@ -55,7 +63,12 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'racer-rust/vim-racer'
 Plugin 'chrisbra/csv.vim'
 Plugin 'vim-scripts/Drawit'
+Plugin 'alx741/vim-hindent'
 "Plugin 'tbabej/taskwiki'
+Plugin 'alpertuna/vim-header'
+Plugin 'parsonsmatt/intero-neovim'
+Plugin 'neomake/neomake'
+"Plugin 'lukerandall/haskellmode-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -171,7 +184,6 @@ execute pathogen#infect()
 
 map <C-n> :NERDTreeToggle<CR>
 
-set colorcolumn=81
 
 let g:syntastic_literate_checkers = ['lit']
 let g:syntastic_rust_checkers = ['cargo']
@@ -218,6 +230,8 @@ augroup END
 colorscheme darkblue
 set t_Co=256
 
+highlight ColorColumn ctermbg=238
+set colorcolumn=81
 " Vimwiki Section
 
 let g:vimwiki_list = [ 
@@ -235,3 +249,63 @@ autocmd FileType javascript set shiftwidth=2
 nmap <Esc>[a <s-up>
 nmap <Esc>[b <s-down>
 hi Normal guibg=NONE ctermbg=NONE
+
+let g:header_field_author = 'Vincent Truchseß'
+let g:header_field_author_email = 'redtux@posteo.net'
+
+" Neovim exit Terminal
+tnoremap <Esc> <C-\><C-n>
+
+" Haskell related stuff
+augroup interoMaps
+  au!
+  " Maps for intero. Restrict to Haskell buffers so the bindings don't collide.
+
+  " Background process and window management
+  au FileType haskell nnoremap <silent> <leader>is :InteroStart<CR>
+  au FileType haskell nnoremap <silent> <leader>ik :InteroKill<CR>
+
+  " Open intero/GHCi split horizontally
+  au FileType haskell nnoremap <silent> <leader>io :InteroOpen<CR>
+  " Open intero/GHCi split vertically
+"  au FileType haskell nnoremap <silent> <leader>iov :InteroOpen<CR><C-W>H
+  au FileType haskell nnoremap <silent> <leader>ih :InteroHide<CR>
+
+  " Reloading (pick one)
+  " Automatically reload on save
+  au BufWritePost *.hs InteroReload
+  " Manually save and reload
+"  au FileType haskell nnoremap <silent> <leader>wr :w \| :InteroReload<CR>
+
+  " Load individual modules
+  au FileType haskell nnoremap <silent> <leader>il :InteroLoadCurrentModule<CR>
+  au FileType haskell nnoremap <silent> <leader>if :InteroLoadCurrentFile<CR>
+
+  " Type-related information
+  " Heads up! These next two differ from the rest.
+  au FileType haskell map <silent> <leader>t <Plug>InteroGenericType
+  au FileType haskell map <silent> <leader>T <Plug>InteroType
+  au FileType haskell nnoremap <silent> <leader>it :InteroTypeInsert<CR>
+
+  " Navigation
+  au FileType haskell nnoremap <silent> <leader>jd :InteroGoToDef<CR>
+
+  " Managing targets
+  " Prompts you to enter targets (no silent):
+  au FileType haskell nnoremap <leader>ist :InteroSetTargets<SPACE>
+augroup END
+
+" Intero starts automatically. Set this if you'd like to prevent that.
+"let g:intero_start_immediately = 0
+
+" Enable type information on hover (when holding cursor at point for ~1 second).
+let g:intero_type_on_hover = 1
+
+" Change the intero window size; default is 10.
+let g:intero_window_size = 100
+
+" Sets the intero window to split vertically; default is horizontal
+let g:intero_vertical_split = 1
+
+" OPTIONAL: Make the update time shorter, so the type info will trigger faster.
+set updatetime=1000
