@@ -250,9 +250,9 @@ root.buttons(gears.table.join(
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
+    awful.key({ modkey, "Shift" }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
+    awful.key({ modkey, "Shift" }, "Right",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
@@ -285,10 +285,10 @@ globalkeys = gears.table.join(
               {description = "swap with next client by index", group = "client"}),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey, "Control" }, "Left",
+    awful.key({ modkey }, "Left",
     function() awful.screen.focus_bydirection("left", awful.screen.focused()) end,
               {description = "focus the next left screen", group = "screen"}),
-    awful.key({ modkey, "Control" }, "Right",
+    awful.key({ modkey }, "Right",
     function() awful.screen.focus_bydirection("right", awful.screen.focused()) end,
               {description = "focus the next right screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
@@ -378,12 +378,12 @@ clientkeys = gears.table.join(
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Shift" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
-    awful.key({ modkey, "Shift" }, "Left",
+    awful.key({ modkey, "Control" }, "Left",
     function (c) 
       c:move_to_screen(c.screen:get_next_in_direction("left"))
     end,
               {description = "move to left screen", group = "client"}),
-    awful.key({ modkey, "Shift" }, "Right",
+    awful.key({ modkey, "Control" }, "Right",
     function (c)
       c:move_to_screen(c.screen:get_next_in_direction("right"))
     end,
