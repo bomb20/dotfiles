@@ -2,7 +2,7 @@
 # File              : .zshrc
 # Author            : Vincent Truchseß <redtux@posteo.net>
 # Date              : 25.01.2019
-# Last Modified Date: 30.01.2019
+# Last Modified Date: 04.02.2019
 # Last Modified By  : Vincent Truchseß <redtux@posteo.net>
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH:~/.cabal/bin
@@ -100,24 +100,35 @@ bindkey -v
 export EDITOR=vim
 export RUST_SRC_PATH=~/.local/src/rustc-1.26.2-src/src
 
-alias ll="exa -l --git"
-alias la="exa -la --git"
+if which exa
+then
+  alias ll="exa -l --git"
+  alias la="exa -la --git"
+  alias tt="exa -lT --git"
+  alias ta="exa -laT --git"
+else
+  alias ll="ls -l"
+  alias la="ls -la"
+fi  
+
+if which nvim
+then
+  alias vim="nvim"
+fi
+
 alias gpg="gpg2"
 alias td="task schedule"
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot" 
 alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
-alias tt="exa -lT --git"
-alias ta="exa -laT --git"
 alias g="git"
-alias wgup="sudo wg_init.sh wg0 fe80::ff01"
-alias wgdown="sudo wg_down.sh wg0"
+alias wgup="nmcli connection up wireguard"
+alias wgdown="nmcli connection down wireguard"
 alias rfc="grep -P '^\d+\s' ~/.ietf/rfc-index.txt | fzf --preview='cat ~/.ietf/rfc{+1}.txt'"
 alias brclassic="nvlc http://streams.br.de/br-klassik_2.m3u"
 alias tpm_reseal="udo luks-tpm -p 0 -p 1 -p 2 -p 3 -p 5 -p 7 /dev/sda2 reset"
 alias posteo_otp="pass email/posteo_otp | head -1 | xargs oathtool -b --totp="sha1" | wl-copy"
 alias mutt="mutt.sh"
-alias vim="nvim"
 function cc(){
   cd $(go.sh $1)
 }
