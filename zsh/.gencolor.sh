@@ -1,4 +1,10 @@
 #!/bin/bash
+# File              : .gencolor.sh
+# Author            : Vincent Truchseß <redtux@posteo.net>
+# Date              : 04.02.2019
+# Last Modified Date: 04.02.2019
+# Last Modified By  : Vincent Truchseß <redtux@posteo.net>
+#!/bin/bin/env bash
 
 if [ -e $HOME/.prompt-color ]
 then
