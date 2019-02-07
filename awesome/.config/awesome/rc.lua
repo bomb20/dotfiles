@@ -2,7 +2,7 @@
 File              : rc.lua
 Author            : Vincent Truchseß <redtux@posteo.net>
 Date              : 26.01.2019
-Last Modified Date: 30.01.2019
+Last Modified Date: 06.02.2019
 Last Modified By  : Vincent Truchseß <redtux@posteo.net>
 --]]--
 -- Standard awesome library
@@ -262,8 +262,8 @@ globalkeys = gears.table.join(
     awful.key({  }, "XF86AudioRaiseVolume", function() awful.util.spawn("pactl set-sink-volume 0 +5%") end),
     awful.key({  }, "XF86AudioLowerVolume", function() awful.util.spawn("pactl set-sink-volume 0 -5%") end),
     awful.key({  }, "XF86AudioMicMute", function() awful.util.spawn("pactl set-source-mute 1 toggle") end),
-    awful.key({  }, "XF86MonBrightnessUp", function() awful.util.spawn("backlight.sh inc") end),
-    awful.key({  }, "XF86MonBrightnessDown", function() awful.util.spawn("backlight.sh dec") end),
+    awful.key({  }, "XF86MonBrightnessUp", function() awful.util.spawn("/home/vincent/.local/bin/backlight.sh inc") end),
+    awful.key({  }, "XF86MonBrightnessDown", function() awful.util.spawn("/home/vincent/.local/bin/backlight.sh dec") end),
 
     awful.key({ modkey,           }, "j",
         function ()
@@ -361,7 +361,7 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "space", function() menubar.show() end,
+    awful.key({ modkey }, "space", function() awful.util.spawn("dmenu_run") end,
               {description = "show the menubar", group = "launcher"})
 )
 
@@ -597,3 +597,26 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+--
+
+-- Autorun
+
+autorun = true;
+autorunApps = 
+{
+  "compton",
+  "pasystray",
+  "cbatticon -n 1",
+  "cbatticon 0",
+--  "nextcloud",
+  "blueman-applet",
+  "nm-applet",
+  "redshift-gtk -l 49.8:9.9 -t 6500:2700",
+  "xinput disable 'Synaptics TM3053-004'"
+}
+
+if autorun then
+  for app = 1, #autorunApps do
+    awful.util.spawn(autorunApps[app])
+  end
+end

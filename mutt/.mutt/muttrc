@@ -35,7 +35,6 @@ bind index \CJ sidebar-next
 bind index \CB sidebar-open
 bind pager \CK sidebar-prev
 bind pager \CJ sidebar-next
-bind pager \C<enter> sidebar-open
 
 
 #source ~/.mutt/gpg.rc
