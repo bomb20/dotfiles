@@ -60,7 +60,7 @@ COLOR=$(gencolor)
 export PS1='%(!.%{$fg_bold[red]%}.%{$fg_bold[$COLOR]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
 export RPS1=""
 
-# Vin keybindings
+# Vim keybindings
 bindkey -v
 
 # environment variables
@@ -69,7 +69,7 @@ export PATH="$PATH:$HOME/.local/bin"
 if which nvim 2>&1 > /dev/null
 then
   alias vim="nvim"
-  export EDITOR=vim
+  export EDITOR=nvim
 else
   export EDITOR=vim
 fi
@@ -101,7 +101,6 @@ alias brclassic="nvlc http://streams.br.de/br-klassik_2.m3u"
 alias tpm_reseal="udo luks-tpm -p 0 -p 1 -p 2 -p 3 -p 5 -p 7 /dev/sda2 reset"
 alias posteo_otp="pass email/posteo_otp | head -1 | xargs oathtool -b --totp="sha1" | wl-copy"
 alias mutt="mutt.sh"
-alias vim="nvim"
 
 # Bookmark section
 eval "$(cat $HOME/.bookmarks | awk '{print "alias "$1"=\"cd "$2"\""}')"
