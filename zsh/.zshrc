@@ -2,7 +2,7 @@
 # File              : .zshrc
 # Author            : Vincent Truchseß <redtux@posteo.net>
 # Date              : 25.01.2019
-# Last Modified Date: 07.02.2019
+# Last Modified Date: 09.02.2019
 # Last Modified By  : Vincent Truchseß <redtux@posteo.net>
 # If you come from bash you might have to change your $PATH.
 #export PATH=$HOME/bin:/usr/local/bin:$PATH:~/.cabal/bin
@@ -66,9 +66,11 @@ bindkey -v
 # environment variables
 export PATH="$PATH:$HOME/.local/bin"
 
+# Vim/NeoVim specific stuff
 if which nvim 2>&1 > /dev/null
 then
   alias vim="nvim"
+  alias vit="nvim -c :terminal"
   export EDITOR=nvim
 else
   export EDITOR=vim
@@ -101,6 +103,8 @@ alias brclassic="nvlc http://streams.br.de/br-klassik_2.m3u"
 alias tpm_reseal="udo luks-tpm -p 0 -p 1 -p 2 -p 3 -p 5 -p 7 /dev/sda2 reset"
 alias posteo_otp="pass email/posteo_otp | head -1 | xargs oathtool -b --totp="sha1" | wl-copy"
 alias mutt="mutt.sh"
+alias cfg="sudo vim /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
+
 
 # Bookmark section
 eval "$(cat $HOME/.bookmarks | awk '{print "alias "$1"=\"cd "$2"\""}')"
