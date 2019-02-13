@@ -90,6 +90,11 @@ else
   alias ta="tree -la"
 fi
 
+if uname -a | grep NixOS 2>&1 > /dev/null
+then
+  alias cfg="vim $HOME/.nixos/configuration.nix && $HOME/.nixos/build.sh"
+fi
+
 alias gpg="gpg2"
 alias td="task schedule"
 alias poweroff="systemctl poweroff"
@@ -103,7 +108,6 @@ alias brclassic="nvlc http://streams.br.de/br-klassik_2.m3u"
 alias tpm_reseal="udo luks-tpm -p 0 -p 1 -p 2 -p 3 -p 5 -p 7 /dev/sda2 reset"
 alias posteo_otp="pass email/posteo_otp | head -1 | xargs oathtool -b --totp="sha1" | wl-copy"
 alias mutt="mutt.sh"
-alias cfg="sudo vim /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
 
 
 # Bookmark section
