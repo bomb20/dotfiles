@@ -40,6 +40,8 @@
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
+  nixpkgs.config.allowUnfree = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -51,7 +53,7 @@
     lynx htop khal khard vdirsyncer libgnome-keyring gnome3.gnome-keyring
     nextcloud-client fzf entr pdfpc redshift blueman acpi usbutils pciutils
     displaycal brightnessctl maven exa texlive.combined.scheme-medium p7zip killall
-    apache-directory-studio bluez bluez-tools darktable gimp xsane
+    apache-directory-studio bluez bluez-tools darktable gimp xsane gnupg binutils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -65,6 +67,8 @@
 
   hardware.brightnessctl.enable = true;
   hardware.sane.enable = true;
+  hardware.sane.extraBackends = [ pkgs.epkowa ];
+  nixpkgs.config.sane.snapscanFirmware = "/var/epson/esfwA1.bin";
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -85,6 +89,9 @@
   hardware.bluetooth.enable = true;
   hardware.pulseaudio.package = pkgs.pulseaudioFull;
 
+  services.tlp.enable = true;
+  services.tlp.extraConfig = "";
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.layout = "us";
@@ -92,14 +99,14 @@
   services.xserver.xkbVariant = "altgr-intl";
   # services.xserver.xkbOptions = "eurosign:e";
   services.xserver.windowManager.awesome.enable = true;
-  services.xserver.displayManager.lightdm = {
-    enable = true;
-    autoLogin = {
-      enable = true;
-      user = "vincent";
-      timeout = 0;
-    };
-  };
+#  services.xserver.displayManager.lightdm = {
+#    enable = true;
+#    autoLogin = {
+#      enable = true;
+#      user = "vincent";
+#      timeout = 0;
+#    };
+#  };
 
   # Enable touchpad support.
   services.xserver.libinput = {

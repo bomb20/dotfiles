@@ -9,8 +9,8 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ "kvm-intel" "acpi_call" ];
+  boot.extraModulePackages = [ pkgs.linuxPackages.acpi_call ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/370668d2-a4bb-4ff3-805f-be5fbc193270";

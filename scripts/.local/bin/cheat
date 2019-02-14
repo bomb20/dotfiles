@@ -1,0 +1,9 @@
+#!/bin/sh
+
+QUERY=""
+for i in "$@"
+do
+  QUERY=$QUERY/$i
+done
+
+curl "cheat.sh/$QUERY"

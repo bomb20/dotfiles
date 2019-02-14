@@ -1,0 +1,43 @@
+#!/bin/sh
+
+REPOSITORY="brick0:~/storage/borg"
+SOURCE="/home/.mnt/vincent"
+
+case "$1" in
+  "local")
+    REPOSITORY="/mnt/vincent/borg"
+    echo "Please mount your backup-harddrive at /mnt"
+    read -r
+    ;;
+esac
+
+SNAPID=$(snapper -c home create -p -d "borg")
+
+sudo mount_snapshot.sh "$SNAPID"
+
+export BORG_PASSCOMMAND="pass sonstige/borg"
+
+#  -e "re:.*\/lost\+found" -e "re:.*\/\.config/PyBitmessage/messages.dat" \
+#  -e "re:.*\/Downloads" -e "re:.*\/tmp" -e "re:.*\/\.cache" \
+#  -e "re:.*\.iso\b" -e "re:.*\.mp4\b" -e "$HOME/mozilla" -e "$HOME/mail" \
+#  -e "re:.*\/\.cargo.*" -e "re:.8\/\.idea.*" -e "re:.*\/\.m2.*" \
+#  -e "$HOME/VirtualBox\ Vms" \
+#  -e "$HOME/.rustup/" -e "$HOME/.stack/" -e "$HOME/.cabal/" \
+
+borg create -v --stats --progress --compression lz4 --exclude-caches \
+   --exclude-if-present .ignore \
+   $REPOSITORY::'nein-{now:%Y-%m-%d-%H%M%S}' $SOURCE
+
+echo "Pruning archives..."
+borg prune -v --list $REPOSITORY \
+    --keep-within=2d --keep-daily=7 --keep-weekly=4 --keep-monthly=12 --keep-yearly=100
+
+sudo umount_snapshot.sh
+
+snapper -c home delete "$SNAPID"
+
+#if [ "$1" = "remote" ]
+#then
+##    nmcli connection down uuid ${VPN_CONID} > /dev/null
+#    sudo wg_down.sh wg0
+#  fi

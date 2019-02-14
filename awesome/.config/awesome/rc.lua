@@ -601,22 +601,22 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autorun
 
-autorun = true;
-autorunApps = 
-{
-  "compton",
-  "pasystray",
-  "cbatticon -n 1",
-  "cbatticon 0",
---  "nextcloud",
-  "blueman-applet",
-  "nm-applet",
-  "redshift-gtk -l 49.8:9.9 -t 6500:2700",
-  "xinput disable 'Synaptics TM3053-004'"
-}
-
-if autorun then
-  for app = 1, #autorunApps do
-    awful.util.spawn(autorunApps[app])
-  end
-end
+--autorun = true;
+--autorunApps = 
+--{
+--  "compton",
+--  "pasystray",
+--  "cbatticon -n 1",
+--  "cbatticon 0",
+----  "nextcloud",
+--  "blueman-applet",
+--  "nm-applet",
+--  "redshift-gtk -l 49.8:9.9 -t 6500:2700",
+--  "xinput disable 'Synaptics TM3053-004'"
+--}
+--
+--if autorun then
+--  for app = 1, #autorunApps do
+--    awful.util.spawn(autorunApps[app])
+--  end
+--end

@@ -92,25 +92,27 @@ fi
 
 if uname -a | grep NixOS 2>&1 > /dev/null
 then
-  alias cfg="vim $HOME/.nixos/configuration.nix && $HOME/.nixos/build.sh"
+  alias cfg="vim $HOME/.nixos/configuration.nix"
 fi
 
-alias gpg="gpg2"
-alias td="task schedule"
+if which gpg2 2>&1 > /dev/null
+then
+  alias gpg="gpg2"
+fi
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot" 
-alias today="task next +TODAY or +next or scheduled:today or +OVERDUE"
 alias g="git"
 alias wgup="nmcli connection up wireguard"
 alias wgdown="nmcli connection down wireguard"
 alias rfc="grep -P '^\d+\s' ~/.ietf/rfc-index.txt | fzf --preview='cat ~/.ietf/rfc{+1}.txt'"
 alias brclassic="nvlc http://streams.br.de/br-klassik_2.m3u"
-alias tpm_reseal="udo luks-tpm -p 0 -p 1 -p 2 -p 3 -p 5 -p 7 /dev/sda2 reset"
+alias tpm_reseal="sudo luks-tpm -p 0 -p 1 -p 2 -p 3 -p 5 -p 7 /dev/sda2 reset"
 alias posteo_otp="pass email/posteo_otp | head -1 | xargs oathtool -b --totp="sha1" | wl-copy"
 alias mutt="mutt.sh"
 
 
 # Bookmark section
+touch ~/.bookmarks
 eval "$(cat $HOME/.bookmarks | awk '{print "alias "$1"=\"cd "$2"\""}')"
 
 function bb() {
@@ -121,7 +123,6 @@ function bb() {
     DIR=$(cat "$BKFILE"| fzf --preview='ls {2}' | awk '{print $2}')
     if [[ "$DIR" == "" ]]
     then
-      cd "./"
     else
       cd "$DIR"
     fi
@@ -152,4 +153,30 @@ if ! pgrep -u "$USER" ssh-agent > /dev/null; then
 fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval "$(<~/.ssh-agent-thing)" > /dev/null
+fi
+
+# Make iproute2 handle ipv6 by default by providing the `ipp` command
+if which ip 2>&1 > /dev/null
+then
+  function ipp(){
+    if [[ $1 == "-4" ]]
+    then
+      ip $@
+    else
+      ip -6 $@
+    fi
+  }
+fi
+
+# Provide a cheat function
+if which curl 2>&1 > /dev/null
+then
+  function cheat() {
+    QUERY=""
+    for i in "$@"
+    do
+      QUERY="$QUERY/$i"
+    done
+    curl "cheat.sh/$QUERY"
+  }
 fi

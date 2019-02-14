@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Find the line in "xrandr -q --verbose" output that contains current screen orientation and "strip" out current orientation.
+
+rotation="$(xrandr -q --verbose | grep 'LVDS1' | egrep -o  '\) (normal|left|inverted|right) \(' | egrep -o '(normal|left|inverted|right)')"
+#rotation="$(xrandr -q --verbose | grep 'connected' | egrep -o  '\) (normal|left|inverted|right) \(' | egrep -o '(normal|left|inverted|right)')"
+
+# Using current screen orientation proceed to rotate screen and input devices.
+
+case "$rotation" in
+    normal)
+	    xrandr --output LVDS1 --rotate inverted
+	    xinput enable "Wacom ISDv4 E6 Finger touch"
+	    xinput enable "Wacom ISDv4 E6 Pen stylus"
+	    xinput enable "Wacom ISDv4 E6 Pen eraser"
+	    xinput map-to-output "Wacom ISDv4 E6 Finger touch" LVDS1
+	    xinput map-to-output "Wacom ISDv4 E6 Pen stylus" LVDS1
+	    xinput map-to-output "Wacom ISDv4 E6 Pen eraser" LVDS1
+	    xinput set-int-prop "Wacom ISDv4 E6 Pen stylus" "Evdev Axis Calibration" 32 66 27610 42 15556
+      onboard &
+    ;;
+    inverted)
+	    xrandr --output LVDS1 --rotate normal
+	    xinput disable "Wacom ISDv4 E6 Pen stylus"
+	    xinput disable "Wacom ISDv4 E6 Pen eraser"
+	    xinput disable "Wacom ISDv4 E6 Finger touch" 
+	    xinput map-to-output "Wacom ISDv4 E6 Finger touch" LVDS1
+	    xinput map-to-output "Wacom ISDv4 E6 Pen stylus" LVDS1
+      killall onboard
+    ;;
+esac
