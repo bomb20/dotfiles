@@ -5,9 +5,7 @@ SOURCE="/home/.mnt/vincent"
 
 case "$1" in
   "local")
-    REPOSITORY="/mnt/vincent/borg"
-    echo "Please mount your backup-harddrive at /mnt"
-    read -r
+    REPOSITORY=/run/media/$USER/$(ls /run/media/$USER | fzf)/vincent/borg
     ;;
 esac
 
