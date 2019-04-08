@@ -63,42 +63,13 @@ export RPS1=""
 # Vim keybindings
 bindkey -v
 
-# environment variables
-export PATH="$PATH:$HOME/.local/bin"
-
-# Vim/NeoVim specific stuff
-if which nvim 2>&1 > /dev/null
+# Conditional Aliasses
+if [ -e $HOME/.aliasses ]
 then
-  alias vim="nvim"
-  alias vit="nvim -c :terminal"
-  export EDITOR=nvim
-else
-  export EDITOR=vim
+  source $HOME/.aliasses
 fi
 
 # Aliasses
-if which exa 2>&1 > /dev/null
-then
-  alias ll="exa -l --git"
-  alias la="exa -la --git"
-  alias tt="exa -lT --git"
-  alias ta="exa -laT --git"
-else
-  alias ll="ls -l"
-  alias la="ls -la"
-  alias tt="tree -l"
-  alias ta="tree -la"
-fi
-
-if uname -a | grep NixOS 2>&1 > /dev/null
-then
-  alias cfg="vim $HOME/.nixos/configuration.nix"
-fi
-
-if which gpg2 2>&1 > /dev/null
-then
-  alias gpg="gpg2"
-fi
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot" 
 alias g="git"
@@ -120,7 +91,7 @@ function bb() {
 
   if [[ "$1" == "" ]]
   then
-    DIR=$(cat "$BKFILE"| fzf --preview='ls {2}' | awk '{print $2}')
+    DIR=$(cat "$BKFILE"| fzf --preview='ls -l {2}' --preview-window=up| awk '{print $2}')
     if [[ "$DIR" == "" ]]
     then
     else
@@ -146,14 +117,6 @@ function bb() {
     esac
   fi
 }
-
-# SSH-Agent startup
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing
-fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<~/.ssh-agent-thing)" > /dev/null
-fi
 
 # Make iproute2 handle ipv6 by default by providing the `ipp` command
 if which ip 2>&1 > /dev/null

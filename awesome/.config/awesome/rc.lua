@@ -52,7 +52,7 @@ end
 beautiful.init("/home/vincent/.config/awesome/themes/green/theme.lua")
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
-beautiful.useless_gap = 8
+beautiful.useless_gap = 4
 beautiful.gap_single_client = false
 
 -- This is used later as the default terminal and editor to run.
@@ -264,6 +264,8 @@ globalkeys = gears.table.join(
     awful.key({  }, "XF86AudioMicMute", function() awful.util.spawn("pactl set-source-mute 1 toggle") end),
     awful.key({  }, "XF86MonBrightnessUp", function() awful.util.spawn("/home/vincent/.local/bin/backlight.sh inc") end),
     awful.key({  }, "XF86MonBrightnessDown", function() awful.util.spawn("/home/vincent/.local/bin/backlight.sh dec") end),
+    awful.key({  }, "XF86LaunchA", function() awful.util.spawn("/home/vincent/.local/bin/undock.sh") end),
+    awful.key({  }, "XF86Explorer", function() awful.util.spawn("/home/vincent/.local/bin/dock.sh") end),
 
     awful.key({ modkey,           }, "j",
         function ()
@@ -301,7 +303,7 @@ globalkeys = gears.table.join(
             end
         end,
         {description = "go back", group = "client"}),
-
+        --
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),

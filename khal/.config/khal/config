@@ -1,16 +1,12 @@
 [calendars]
 
 [[personal]]
-path = ~/.calendars/personalics
+path = ~/.radicale/cal/357599ca-77f8-5fed-54a4-f411b08a8161/
 color = light green
 
 [[alise]]
 path = ~/.calendars/personal_shared_by_alise
 color = light blue
-
-[[uni]]
-path = ~/.calendars/vincent_uni
-color = light red
 
 [locale]
 timeformat = %H:%M

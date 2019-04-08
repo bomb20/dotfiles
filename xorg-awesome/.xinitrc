@@ -9,5 +9,4 @@ exec nextcloud &
 exec blueman-applet &
 exec caffeine &
 exec xss-lock slock &
-exec xmodmap ~/.Xmodmap &
 exec awesome
