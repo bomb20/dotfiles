@@ -1,0 +1,5 @@
+*.lock
+*.bak
+cache*
+queue
+history*

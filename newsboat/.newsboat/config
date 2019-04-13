@@ -3,9 +3,6 @@ proxy-type socks5
 proxy localhost:9050
 refresh-on-startup yes
 text-width 80
-browser qutebrowser
-
-urls-source "ocnews"
-ocnews-url "https://redtux.dynv6.net/nextcloud"
-ocnews-login "vincent"
-ocnews-passwordeval "pass internet/nextcloud/vincent"
+browser firefox
+auto-reload yes
+download-path ~/Podcasts
