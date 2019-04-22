@@ -40,39 +40,41 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'zyedidia/literate.vim'
+" Plugin 'zyedidia/literate.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
-Plugin 'rust-lang/rust.vim'
+" Plugin 'rust-lang/rust.vim'
 
-Plugin 'jpalardy/vim-slime'
+" Plugin 'jpalardy/vim-slime'
 Plugin 'scrooloose/nerdtree'
 " Plugin 'wookiehangover/jshint.vim'
-Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-fugitive.git' " Git 
 
-Plugin 'vim-scripts/utl.vim'
-Plugin 'tpope/vim-repeat'
+" Plugin 'vim-scripts/utl.vim'
+" Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
-Plugin 'chrisbra/NrrwRgn'
-Plugin 'mattn/calendar-vim'
-Plugin 'inkarkat/vim-SyntaxRange'
-Plugin 'jceb/vim-orgmode'
-Plugin 'vim-scripts/desert256.vim'
+" Plugin 'chrisbra/NrrwRgn'
+" Plugin 'mattn/calendar-vim'
+" Plugin 'inkarkat/vim-SyntaxRange'
+" Plugin 'jceb/vim-orgmode'
+" Plugin 'vim-scripts/desert256.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 
 Plugin 'vimwiki/vimwiki'
-Plugin 'racer-rust/vim-racer'
+" Plugin 'racer-rust/vim-racer'
 Plugin 'chrisbra/csv.vim'
 Plugin 'vim-scripts/Drawit'
-Plugin 'alx741/vim-hindent'
+"Plugin 'alx741/vim-hindent'
 "Plugin 'tbabej/taskwiki'
 Plugin 'alpertuna/vim-header'
 "Plugin 'lukerandall/haskellmode-vim'
-Plugin 'parsonsmatt/intero-neovim'
+ Plugin 'parsonsmatt/intero-neovim'
 Plugin 'neomake/neomake'
-Plugin 'LnL7/vim-nix'
+Plugin 'flazz/vim-colorschemes' 
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'mmai/vim-markdown-wiki'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -227,7 +229,7 @@ augroup END
 "  inoremap <silent> <C-[>OC <RIGHT>
 "endif
 "
-colorscheme darkblue
+colorscheme desert
 set t_Co=256
 
 highlight ColorColumn ctermbg=238
@@ -269,7 +271,7 @@ nnoremap <C-Right> :tabnext<CR>
 map <leader>y "+y
 map <leader>yy "+yy
 map <leader>p "+p
-map <leader>P "+P
+map <leader>P o<Esc>"+P
 
 "open vimrc and nvim/init.vim
 map <leader>rc :e<Space>~/.vimrc<CR>

@@ -3,6 +3,7 @@ proxy-type socks5
 proxy localhost:9050
 refresh-on-startup yes
 text-width 80
-browser firefox
+browser links
 auto-reload yes
 download-path ~/Podcasts
+

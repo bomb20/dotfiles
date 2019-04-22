@@ -7,7 +7,7 @@
 
 # Environment Variables
 export EDITOR=vim
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 # Make sure to start an ssh-agent
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then

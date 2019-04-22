@@ -1,6 +1,6 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
-    let &packpath = &runtimepath
-    source ~/.vimrc
+let &packpath = &runtimepath
+source ~/.vimrc
 
 " Neovim exit Terminal insert mode
 tnoremap <C-q> <C-\><C-n>
@@ -17,14 +17,14 @@ augroup interoMaps
   " Open intero/GHCi split horizontally
   au FileType haskell nnoremap <silent> <leader>io :InteroOpen<CR>
   " Open intero/GHCi split vertically
-"  au FileType haskell nnoremap <silent> <leader>iov :InteroOpen<CR><C-W>H
+  "  au FileType haskell nnoremap <silent> <leader>iov :InteroOpen<CR><C-W>H
   au FileType haskell nnoremap <silent> <leader>ih :InteroHide<CR>
 
   " Reloading (pick one)
   " Automatically reload on save
   au BufWritePost *.hs InteroReload
   " Manually save and reload
-"  au FileType haskell nnoremap <silent> <leader>wr :w \| :InteroReload<CR>
+  "  au FileType haskell nnoremap <silent> <leader>wr :w \| :InteroReload<CR>
 
   " Load individual modules
   au FileType haskell nnoremap <silent> <leader>il :InteroLoadCurrentModule<CR>
@@ -45,10 +45,10 @@ augroup interoMaps
 augroup END
 
 " Intero starts automatically. Set this if you'd like to prevent that.
-let g:intero_start_immediately = 0
+let g:intero_start_immediately = 1
 
 " Enable type information on hover (when holding cursor at point for ~1 second).
-"let g:intero_type_on_hover = 1
+let g:intero_type_on_hover = 1
 
 " Change the intero window size; default is 10.
 let g:intero_window_size = 10

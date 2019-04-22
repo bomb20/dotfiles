@@ -15,8 +15,9 @@ fi
 # Vim/NeoVim specific stuff
 if which nvim 2>&1 > /dev/null
 then
-  echo 'alias vim="nvim"' >> $ALIASFILE
-  echo 'alias vit="nvim -c :terminal"' >> $ALIASFILE
+  echo 'alias v="nvim"' >> $ALIASFILE
+else
+  echo 'alias v="vim"' >> $ALIASFILE
 fi
 
 # ls or exa
@@ -38,4 +39,3 @@ if which gpg2 2>&1 > /dev/null
 then
   echo 'alias gpg="gpg2"' >> $ALIASFILE
 fi
-

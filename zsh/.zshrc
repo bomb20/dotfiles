@@ -63,10 +63,33 @@ export RPS1=""
 # Vim keybindings
 bindkey -v
 
-# Conditional Aliasses
-if [ -e $HOME/.aliasses ]
+# Vim/NeoVim specific stuff
+if which nvim 2>&1 > /dev/null
 then
-  source $HOME/.aliasses
+  alias v="nvim"
+  alias vim="nvim"
+else
+  alias v="vim"
+fi
+
+# ls or exa
+if which exa 2>&1 > /dev/null
+then
+  alias ll="exa -l --git"
+  alias la="exa -la --git"
+  alias tt="exa -lT --git"
+  alias ta="exa -laT --git"
+else
+  alias ll="ls -l"
+  alias la="ls -la"
+  alias tt="tree -l"
+  alias ta="tree -la"
+fi
+
+# gpg or gpg2
+if which gpg2 2>&1 > /dev/null
+then
+  alias gpg="gpg2"
 fi
 
 # Aliasses
@@ -80,6 +103,7 @@ alias brclassic="nvlc http://streams.br.de/br-klassik_2.m3u"
 alias tpm_reseal="sudo luks-tpm -p 0 -p 1 -p 2 -p 3 -p 5 -p 7 /dev/sda2 reset"
 alias posteo_otp="pass email/posteo_otp | head -1 | xargs oathtool -b --totp="sha1" | wl-copy"
 alias mutt="mutt.sh"
+alias t="task"
 
 
 # Bookmark section

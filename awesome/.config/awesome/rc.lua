@@ -598,6 +598,46 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- {{{
+--
+-- Autostarting for Awesome <3.4!
+-- Add this section to the end of your rc.lua
+-- configuration file within ~/.config/awesome/rc.lua
+--
+-- If you're using Awesome 3.5 change: 
+--    add_signal -> connect_signal 
+--    remove_signal --> disconnect_signal
+--
+-- Thanks to eri_trabiccolo as well as  psychon
+--
+function spawn_once(command, class, tag) 
+  -- create move callback
+  --
+  local callback 
+  callback = function(c) 
+    if c.class == class then 
+      awful.client.movetotag(tag, c) 
+      client.disconnect_signal("manage", callback) 
+    end 
+  end 
+  client.connect_signal("manage", callback) 
+  -- now check if not already running!     
+  local findme = command
+  local firstspace = findme:find(" ")
+  if firstspace then
+    findme = findme:sub(0, firstspace-1)
+  end
+  -- finally run it
+  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. command .. ")")
+end
+
+-- use the spawn_once
+--spawn_once("alacritty --class foo", "foo", awful.screen.focused().tags[6])
+-- spawn_once("chromium", "Chromium", tags[1][3])
+-- spawn_once("thunar", "Thunar", tags[1][4])
+-- spawn_once("xchat", "Xchat", tags[1][5])
+-- }}}
 -- }}}
 --
 

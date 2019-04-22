@@ -5,7 +5,7 @@ path = ~/.radicale/cal/357599ca-77f8-5fed-54a4-f411b08a8161/
 color = light green
 
 [[alise]]
-path = ~/.calendars/personal_shared_by_alise
+path = ~/.radicale/cal/bded0955-0f64-c847-9cb9-55d6d7b4eda5/
 color = light blue
 
 [locale]
